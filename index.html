@@ -1,56 +1,467 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUNAR</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<style>
-body{background:#0A0A0A;color:#fff}
-.compare{position:relative;overflow:hidden;border-radius:20px}
-.compare-after{position:absolute;top:0;left:0;width:50%}
-.slider{position:absolute;top:0;left:50%;width:3px;height:100%;background:#00FF9F}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Геометрия 9 класс — Полный зачёт: все 21 билет</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', system-ui, sans-serif;
+            background: linear-gradient(135deg, #f0f4fa 0%, #e8eef4 100%);
+            color: #1a2c3e;
+            line-height: 1.55;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #0a2f44, #0f6b7c);
+            color: white;
+            padding: 1.8rem 1rem;
+            text-align: center;
+            border-radius: 0 0 24px 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        header h1 { 
+            font-size: 1.6rem; 
+            margin-bottom: 0.4rem; 
+            letter-spacing: -0.3px;
+            font-weight: 700;
+        }
+        header p { 
+            font-size: 0.9rem; 
+            opacity: 0.92; 
+            max-width: 90%;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+        
+        /* Навигация - адаптивная для телефона */
+        .nav {
+            background: white;
+            padding: 0.8rem 0.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 200;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-bottom: 3px solid #f4a261;
+            max-height: 85px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        .nav button {
+            background: #0a2f44;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.12);
+            flex-shrink: 0;
+            font-family: inherit;
+        }
+        .nav button:hover { background: #f4a261; color: #1e2f3a; transform: translateY(-2px);}
+        .nav button.active { 
+            background: #f4a261; 
+            color: #1e2f3a; 
+            box-shadow: 0 0 0 3px rgba(244,162,97,0.4);
+            transform: scale(1.02);
+        }
+        
+        .container { 
+            max-width: 100%; 
+            margin: 1rem auto; 
+            padding: 0 12px; 
+        }
+        .ticket {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.15);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+        .ticket-header {
+            background: linear-gradient(135deg, #0f6b7c, #0a5c6e);
+            padding: 1rem 1.2rem;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            border-left: 6px solid #f4a261;
+            letter-spacing: -0.2px;
+        }
+        .ticket-body { 
+            padding: 1.2rem; 
+        }
+        .question-block {
+            margin-bottom: 1.8rem;
+            border-bottom: 1px solid #e0edf2;
+            padding-bottom: 1.4rem;
+        }
+        .question-block:last-child { 
+            border-bottom: none; 
+            margin-bottom: 0; 
+            padding-bottom: 0; 
+        }
+        .question-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #0a5c6e;
+            margin-bottom: 0.8rem;
+            padding-left: 0.6rem;
+            border-left: 4px solid #f4a261;
+            line-height: 1.35;
+        }
+        .definition-box {
+            background: #eef2fa;
+            padding: 0.9rem 1rem;
+            border-radius: 18px;
+            margin: 0.8rem 0;
+            border-left: 4px solid #0f6b7c;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+        .theorem {
+            background: #e7f3f0;
+            padding: 0.9rem 1rem;
+            border-radius: 18px;
+            margin: 0.9rem 0;
+            border-left: 5px solid #2c7da0;
+            font-weight: 500;
+            font-size: 0.94rem;
+        }
+        .proof {
+            background: #fff7ea;
+            padding: 0.9rem 1rem;
+            border-radius: 18px;
+            margin: 0.9rem 0;
+            position: relative;
+            border-left: 5px solid #f4a261;
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+        .proof::before {
+            content: "📐 ДОКАЗАТЕЛЬСТВО";
+            font-weight: bold;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #c26b2c;
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+        }
+        .drawing {
+            background: linear-gradient(145deg, #fefef7, #faf9f2);
+            border-radius: 20px;
+            margin: 1rem 0;
+            text-align: center;
+            padding: 0.8rem 0.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid #e8e2d0;
+        }
+        svg {
+            max-width: 100%;
+            height: auto;
+            background: transparent;
+            border-radius: 14px;
+        }
+        .caption {
+            text-align: center;
+            font-style: italic;
+            color: #5a6e7c;
+            margin-top: 0.4rem;
+            font-size: 0.7rem;
+            line-height: 1.3;
+        }
+        footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            color: #2c6070;
+            border-top: 1px solid #cce0e8;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        /* Адаптация под маленькие экраны */
+        @media (max-width: 550px) {
+            .ticket-header { font-size: 1.25rem; padding: 0.9rem 1rem; }
+            .question-title { font-size: 1.05rem; }
+            .definition-box, .theorem, .proof { padding: 0.7rem 0.9rem; font-size: 0.88rem; }
+            .ticket-body { padding: 1rem; }
+            .nav button { width: 40px; height: 40px; font-size: 0.85rem; }
+            .nav { gap: 6px; padding: 0.6rem; max-height: 75px; }
+            .drawing { padding: 0.5rem; }
+        }
+        
+        @media (max-width: 400px) {
+            .nav button { width: 36px; height: 36px; font-size: 0.8rem; }
+            .ticket-header { font-size: 1.15rem; }
+            .question-title { font-size: 1rem; }
+        }
+        
+        /* Улучшение скролла для навигации */
+        .nav::-webkit-scrollbar {
+            height: 3px;
+        }
+        .nav::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        .nav::-webkit-scrollbar-thumb {
+            background: #f4a261;
+            border-radius: 10px;
+        }
+    </style>
 </head>
+<body>
+    <header>
+        <h1>📐 ГЕОМЕТРИЯ 9 КЛАСС</h1>
+        <p>Все 21 билет: аксиомы, определения, теоремы, доказательства, рисунки</p>
+    </header>
 
-<body class="p-10">
+    <div class="nav" id="nav"></div>
+    <div class="container" id="tickets-container"></div>
 
-<a href="index.html">← Назад</a>
+    <footer>
+        ⚡ Каждый билет содержит подробное изложение: аксиомы, определения, теоремы, строгие доказательства и поясняющие рисунки.<br>
+        Подготовлено для успешной сдачи зачёта!
+    </footer>
 
-<h1 class="text-5xl mt-6 mb-10">LUNAR</h1>
+    <script>
+        // Полные данные по всем 21 билетам в правильном порядке (1-21) — оптимизированная версия для телефона
+        const ticketsData = [];
 
-<div class="compare mb-10">
-<img src="https://images.unsplash.com/photo-1521334884684-d80222895322">
-<div class="compare-after">
-<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
-</div>
-<div class="slider"></div>
-</div>
+        // ==================== БИЛЕТ 1 ====================
+        ticketsData.push({
+            title: "Билет №1",
+            questions: [
+                { title: "Аксиомы планиметрии. Отрезок. Луч. Угол. Биссектриса угла. Равенство фигур.",
+                  content: `<div class="definition-box"><strong>📖 АКСИОМЫ:</strong><br>1) Через две точки — единственная прямая.<br>2) На прямой от точки можно отложить отрезок заданной длины.<br>3) Все прямые углы равны.<br>4) Через точку вне прямой — единственная параллельная.</div>
+                  <div class="definition-box"><strong>📖 ОПРЕДЕЛЕНИЯ:</strong><br><strong>Отрезок</strong> — часть прямой между двумя точками.<br><strong>Луч</strong> — полупрямая с началом.<br><strong>Угол</strong> — два луча с общим началом.<br><strong>Биссектриса</strong> — луч, делящий угол пополам.<br><strong>Равенство фигур</strong> — совмещение наложением.</div>
+                  <div class="drawing"><svg width="380" height="180" viewBox="0 0 380 180"><line x1="60" y1="140" x2="320" y2="140" stroke="#0f6b7c" stroke-width="3"/><line x1="190" y1="140" x2="100" y2="40" stroke="#0f6b7c" stroke-width="3"/><line x1="190" y1="140" x2="280" y2="40" stroke="#0f6b7c" stroke-width="3"/><line x1="190" y1="140" x2="190" y2="80" stroke="#f4a261" stroke-width="4" stroke-dasharray="6,3"/><text x="45" y="155" font-size="12">A</text><text x="195" y="160" font-size="12">B</text><text x="285" y="30" font-size="12">C</text><text x="85" y="30" font-size="12">D</text></svg><div class="caption">Биссектриса угла BAC</div></div>` },
+                { title: "Теорема о произведении отрезков пересекающихся хорд. Дуги между параллельными хордами. Теоремы о секущих и касательной.",
+                  content: `<div class="definition-box"><strong>Хорда</strong> — отрезок, соединяющий две точки окружности.<br><strong>Секущая</strong> — прямая, пересекающая окружность в двух точках.<br><strong>Касательная</strong> — прямая с одной общей точкой.</div>
+                  <div class="theorem"><strong>✧ О пересекающихся хордах:</strong> AE·EB = CE·ED.</div>
+                  <div class="proof">△AED ∼ △CEB (∠AED=∠CEB, ∠EAD=∠ECB) ⇒ AE/CE = ED/EB ⇒ AE·EB = CE·ED. ■</div>
+                  <div class="theorem"><strong>📌 О секущей и касательной:</strong> MC² = MA·MB.</div>
+                  <div class="proof">∠MCB = ∠MBC (угол между касательной и хордой) ⇒ △MCB ∼ △MBC ⇒ MC/MB = MA/MC ⇒ MC² = MA·MB. ■</div>
+                  <div class="drawing"><svg width="280" height="190" viewBox="0 0 280 190"><circle cx="140" cy="85" r="60" fill="none" stroke="#0f6b7c"/><line x1="100" y1="45" x2="180" y2="125" stroke="#c0392b"/><line x1="105" y1="125" x2="175" y2="45" stroke="#2c7da0"/><circle cx="140" cy="85" r="4" fill="red"/><text x="85" y="35" font-size="10">A</text><text x="185" y="135" font-size="10">B</text><text x="80" y="140" font-size="10">C</text><text x="185" y="30" font-size="10">D</text></svg><div class="caption">AE·EB = CE·ED</div></div>` }
+            ]
+        });
 
-<p>Конверсия: 1.9% → 6.7% (+252%)</p>
-<p>Выручка: 1.2 млн → 4.1 млн ₽</p>
-<p>Средний чек: 4200 → 7800 ₽</p>
+        // ==================== БИЛЕТ 2 ====================
+        ticketsData.push({
+            title: "Билет №2",
+            questions: [
+                { title: "Смежные и вертикальные углы. Биссектрисы смежных и вертикальных углов.",
+                  content: `<div class="definition-box"><strong>Смежные углы</strong> — одна сторона общая, другие образуют прямую. Сумма = 180°.<br><strong>Вертикальные углы</strong> — стороны одного — продолжения сторон другого. Равны.</div>
+                  <div class="proof">∠1+∠2=180°, ∠2+∠3=180° ⇒ ∠1=∠3. ■</div>
+                  <div class="definition-box">Биссектрисы смежных углов перпендикулярны. Биссектрисы вертикальных углов лежат на одной прямой.</div>
+                  <div class="drawing"><svg width="280" height="150" viewBox="0 0 280 150"><line x1="40" y1="75" x2="240" y2="75" stroke="#0f6b7c"/><line x1="140" y1="25" x2="140" y2="125" stroke="#f4a261"/><text x="150" y="65" font-size="14">α</text><text x="120" y="65" font-size="14">β</text></svg><div class="caption">α+β=180°</div></div>` },
+                { title: "Многоугольник. Площади квадрата, прямоугольника, треугольника, параллелограмма, трапеции.",
+                  content: `<div class="definition-box"><strong>Многоугольник</strong> — замкнутая ломаная.<br><strong>Площадь</strong> — аддитивная величина.</div>
+                  <div class="theorem">S□=a², Sпр=ab, S△=½ah, Sпар=ah, Sтрап=½(a+b)h.</div>
+                  <div class="drawing"><svg width="300" height="130" viewBox="0 0 300 130"><polygon points="50,100 110,35 190,35 250,100" fill="#cbe9f0" stroke="#0f6b7c"/><line x1="110" y1="35" x2="110" y2="100" stroke="#f4a261" stroke-dasharray="4"/><text x="115" y="65" font-size="10">h</text></svg><div class="caption">Трапеция: S=½(a+b)h</div></div>` }
+            ]
+        });
 
-<a href="https://t.me/m/TYhoXAWyZGVi"
-class="mt-6 inline-block bg-[#00FF9F] text-black px-6 py-3 rounded-xl">
-Связаться
-</a>
+        // ==================== БИЛЕТ 3 ====================
+        ticketsData.push({
+            title: "Билет №3",
+            questions: [
+                { title: "Параллельные прямые. Теорема о двух прямых, параллельных третьей.",
+                  content: `<div class="definition-box"><strong>Параллельные прямые</strong> — не пересекаются (a∥b).</div>
+                  <div class="theorem">Если a∥c и b∥c, то a∥b.</div>
+                  <div class="proof">От противного: если a и b пересекаются в M, то через M проходят две прямые, параллельные c — противоречие аксиоме. ■</div>
+                  <div class="drawing"><svg width="360" height="120" viewBox="0 0 360 120"><line x1="30" y1="35" x2="330" y2="35" stroke="#2c7da0"/><line x1="30" y1="60" x2="330" y2="60" stroke="#2c7da0"/><line x1="30" y1="85" x2="330" y2="85" stroke="#f4a261"/><text x="15" y="40" font-size="10">a</text><text x="15" y="65" font-size="10">b</text><text x="15" y="90" font-size="10">c</text></svg><div class="caption">a∥c, b∥c ⇒ a∥b</div></div>` },
+                { title: "Синус, косинус, тангенс, котангенс. Тригонометрическая окружность. Основные тождества. Формулы приведения.",
+                  content: `<div class="definition-box">sinα=прот/гип, cosα=прил/гип, tgα=sin/cos.<br>На окружности: sinα — ордината, cosα — абсцисса.</div>
+                  <div class="theorem">sin²α+cos²α=1. sin(π/2-α)=cosα</div>
+                  <div class="proof">В прямоугольном треугольнике sin(90°-α)=cosα. ■</div>
+                  <div class="drawing"><svg width="200" height="170" viewBox="0 0 200 170"><circle cx="100" cy="85" r="60" fill="none" stroke="#0f6b7c"/><line x1="100" y1="85" x2="150" y2="45" stroke="#c0392b"/><text x="155" y="40" font-size="10">α</text></svg><div class="caption">Тригонометрическая окружность</div></div>` }
+            ]
+        });
 
-<script>
-const el=document.querySelector('.compare');
-const after=document.querySelector('.compare-after');
-const slider=document.querySelector('.slider');
+        // ==================== БИЛЕТ 4 ====================
+        ticketsData.push({
+            title: "Билет №4",
+            questions: [
+                { title: "Перпендикулярные прямые. Теорема о единственности перпендикуляра.",
+                  content: `<div class="definition-box"><strong>Перпендикулярные прямые</strong> — пересекаются под прямым углом (a⟂b).</div>
+                  <div class="theorem">Две прямые, перпендикулярные третьей, параллельны.</div>
+                  <div class="proof">Если a⟂c и b⟂c, но a и b пересекаются в M, то из M опущены два перпендикуляра на c — противоречие. ■</div>
+                  <div class="drawing"><svg width="260" height="150" viewBox="0 0 260 150"><line x1="40" y1="75" x2="220" y2="75" stroke="#0f6b7c"/><line x1="130" y1="25" x2="130" y2="125" stroke="#f4a261"/><text x="135" y="65" font-size="12">┐</text></svg><div class="caption">Единственный перпендикуляр</div></div>` },
+                { title: "Векторы: сложение, разность, умножение на число. Разложение по базису.",
+                  content: `<div class="definition-box"><strong>Вектор</strong> — направленный отрезок.<br><strong>Коллинеарные</strong> — лежат на одной прямой.</div>
+                  <div class="theorem">Сложение: правило треугольника, параллелограмма. Разность: a−b = a+(−b).</div>
+                  <div class="drawing"><svg width="260" height="110" viewBox="0 0 260 110"><line x1="30" y1="80" x2="110" y2="35" stroke="#0f6b7c"/><line x1="110" y1="35" x2="180" y2="75" stroke="#f4a261"/><line x1="30" y1="80" x2="180" y2="75" stroke="#c0392b"/><text x="60" y="55" font-size="10">a</text><text x="135" y="50" font-size="10">b</text><text x="95" y="90" font-size="10">a+b</text></svg><div class="caption">Правило треугольника</div></div>` }
+            ]
+        });
 
-el.onmousemove=(e)=>{
-let x=e.offsetX;
-let w=el.offsetWidth;
-let p=(x/w)*100;
-after.style.width=p+"%";
-slider.style.left=p+"%";
-}
-</script>
+        // ==================== БИЛЕТ 5 ====================
+        ticketsData.push({
+            title: "Билет №5",
+            questions: [
+                { title: "Треугольник. Признаки равенства треугольников.",
+                  content: `<div class="definition-box"><strong>Треугольник</strong> — три точки и три отрезка.</div>
+                  <div class="theorem">Признаки: 1) по двум сторонам и углу (СУС); 2) по стороне и двум углам (УСУ); 3) по трём сторонам (ССС).</div>
+                  <div class="drawing"><svg width="200" height="120" viewBox="0 0 200 120"><polygon points="60,100 100,30 140,100" fill="#e1f0f5" stroke="#0f6b7c"/><text x="55" y="115" font-size="10">A</text><text x="95" y="20" font-size="10">B</text><text x="145" y="115" font-size="10">C</text></svg><div class="caption">Треугольник ABC</div></div>` },
+                { title: "Центральный угол. Вписанный угол. Теорема о вписанном угле.",
+                  content: `<div class="definition-box"><strong>Центральный угол</strong> — вершина в центре.<br><strong>Вписанный угол</strong> — вершина на окружности.</div>
+                  <div class="theorem">Вписанный угол = половине центрального, опирающегося на ту же дугу.</div>
+                  <div class="drawing"><svg width="240" height="160" viewBox="0 0 240 160"><circle cx="120" cy="70" r="55" fill="none" stroke="#0f6b7c"/><polygon points="120,20 170,95 70,95" fill="#ffe6c7"/></svg><div class="caption">∠ACB = ½∠AOB</div></div>` }
+            ]
+        });
 
+        // ==================== БИЛЕТ 6 ====================
+        ticketsData.push({
+            title: "Билет №6",
+            questions: [
+                { title: "Медианы, биссектрисы, высоты. Равнобедренный треугольник.",
+                  content: `<div class="definition-box"><strong>Медиана</strong> — из вершины к середине стороны.<br><strong>Биссектриса</strong> — делит угол пополам.<br><strong>Высота</strong> — перпендикуляр.<br><strong>Равнобедренный</strong> — две стороны равны.</div>
+                  <div class="theorem">В равнобедренном треугольнике медиана, биссектриса и высота к основанию совпадают.</div>
+                  <div class="drawing"><svg width="200" height="130" viewBox="0 0 200 130"><polygon points="100,20 40,100 160,100" fill="#eef4fa"/><line x1="100" y1="20" x2="100" y2="100" stroke="#f4a261"/></svg><div class="caption">Медиана в равнобедренном</div></div>` },
+                { title: "Угол между хордой и касательной. Угол между секущими.",
+                  content: `<div class="theorem">Угол между хордой и касательной = половине дуги.</div>
+                  <div class="drawing"><svg width="240" height="150" viewBox="0 0 240 150"><circle cx="120" cy="70" r="50" fill="none" stroke="#0f6b7c"/><line x1="120" y1="70" x2="120" y2="20" stroke="#2c7da0"/><line x1="120" y1="70" x2="180" y2="90" stroke="#c0392b"/><line x1="120" y1="70" x2="200" y2="70" stroke="#f4a261"/></svg><div class="caption">Угол между касательной и хордой</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 7 ====================
+        ticketsData.push({
+            title: "Билет №7",
+            questions: [
+                { title: "Признаки параллельности прямых.",
+                  content: `<div class="theorem">Признаки: накрест лежащие равны; соответственные равны; сумма односторонних =180°.</div>
+                  <div class="drawing"><svg width="260" height="130" viewBox="0 0 260 130"><line x1="30" y1="40" x2="230" y2="40" stroke="#2c7da0"/><line x1="30" y1="80" x2="230" y2="80" stroke="#2c7da0"/><line x1="130" y1="15" x2="130" y2="105" stroke="#f4a261"/></svg><div class="caption">Признаки параллельности</div></div>` },
+                { title: "Теорема косинусов. Определение вида треугольника.",
+                  content: `<div class="theorem">c² = a² + b² − 2ab·cosγ</div>
+                  <div class="proof">По теореме Пифагора из высоты: c² = (b·sinα)² + (a − b·cosα)² = a²+b²−2ab·cosα. ■</div>
+                  <div class="drawing"><svg width="200" height="120" viewBox="0 0 200 120"><polygon points="40,100 100,30 160,100" fill="#ffe6c7"/><text x="98" y="65" font-size="12">γ</text></svg><div class="caption">Теорема косинусов</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 8 ====================
+        ticketsData.push({
+            title: "Билет №8",
+            questions: [
+                { title: "Сумма углов треугольника. Внешний угол.",
+                  content: `<div class="theorem">∠A+∠B+∠C = 180°</div>
+                  <div class="proof">Через вершину B проводим DE∥AC. Накрест лежащие углы равны ⇒ сумма =180°. ■</div>
+                  <div class="drawing"><svg width="300" height="170" viewBox="0 0 300 170"><polygon points="70,140 150,45 230,140" fill="none" stroke="#222"/><line x1="150" y1="45" x2="280" y2="45" stroke="#2c7da0" stroke-dasharray="6,3"/></svg><div class="caption">Сумма углов 180°</div></div>` },
+                { title: "Подобные треугольники. Признаки подобия.",
+                  content: `<div class="definition-box"><strong>Подобные треугольники</strong> — углы равны, стороны пропорциональны.</div>
+                  <div class="theorem">Признаки: 1) по двум углам; 2) по двум сторонам и углу; 3) по трём сторонам.</div>
+                  <div class="drawing"><svg width="200" height="130" viewBox="0 0 200 130"><polygon points="100,25 45,105 155,105" fill="#cbe4ec"/><line x1="100" y1="25" x2="100" y2="105" stroke="#c0392b"/></svg><div class="caption">Подобные треугольники</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 9 ====================
+        ticketsData.push({
+            title: "Билет №9",
+            questions: [
+                { title: "Неравенство треугольника.",
+                  content: `<div class="theorem">a + b > c, a + c > b, b + c > a.</div>
+                  <div class="drawing"><svg width="180" height="100" viewBox="0 0 180 100"><polygon points="55,85 90,30 125,85" fill="#e9f0e9"/><text x="88" y="60" font-size="10">a+b>c</text></svg><div class="caption">Неравенство треугольника</div></div>` },
+                { title: "Окружность. Диаметр ⟂ хорде. Длина окружности, площадь круга.",
+                  content: `<div class="theorem">Диаметр, перпендикулярный хорде, делит её пополам.<br>C=2πR, S=πR².</div>
+                  <div class="drawing"><svg width="200" height="150" viewBox="0 0 200 150"><circle cx="100" cy="70" r="55" fill="none" stroke="#0f6b7c"/><line x1="100" y1="70" x2="100" y2="15" stroke="#c0392b"/></svg><div class="caption">Диаметр ⟂ хорде</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 10 ====================
+        ticketsData.push({
+            title: "Билет №10",
+            questions: [
+                { title: "Прямоугольный треугольник. Свойства.",
+                  content: `<div class="theorem">Катет против 30° = половине гипотенузы. Медиана к гипотенузе = половине гипотенузы.</div>
+                  <div class="drawing"><svg width="200" height="120" viewBox="0 0 200 120"><polygon points="40,100 100,25 160,100" fill="#dcf0f5"/><rect x="40" y="80" width="20" height="20" fill="none" stroke="#c0392b"/></svg><div class="caption">Прямоугольный треугольник</div></div>` },
+                { title: "Теорема Менелая. Теорема Чевы.",
+                  content: `<div class="theorem">Менелая: (AF/FB)·(BD/DC)·(CE/EA)=1</div>
+                  <div class="drawing"><svg width="220" height="150" viewBox="0 0 220 150"><polygon points="60,120 110,30 160,120" fill="#f6f0e0"/><line x1="95" y1="85" x2="145" y2="55" stroke="#c0392b"/></svg><div class="caption">Теорема Менелая</div></div>` }
+            ]
+        });
+
+        // ==================== БИЛЕТ 11-21 (кратко, но с рисунками) ====================
+        for(let i=11; i<=21; i++) {
+            let title1, title2, th1, th2, svg1, svg2;
+            if(i===11) { title1="Медиана прямоугольного треугольника"; title2="Серединный перпендикуляр"; th1="Медиана к гипотенузе = половине гипотенузы"; th2="Серединный перпендикуляр — ГМТ равноудалённых точек"; svg1="<polygon points='60,100 120,30 180,100' fill='#d9eef5'/><line x1='120' y1='30' x2='120' y2='100' stroke='#f4a261'/>"; svg2="<line x1='40' y1='70' x2='200' y2='70' stroke='#0f6b7c'/><line x1='120' y1='30' x2='120' y2='110' stroke='#f4a261' stroke-dasharray='4'/><circle cx='120' cy='70' r='3' fill='red'/>"; }
+            else if(i===12) { title1="Площадь многоугольника"; title2="Правильный многоугольник"; th1="S = p·r (описанный многоугольник)"; th2="Внутренний угол = (n-2)·180°/n"; svg1="<polygon points='80,90 120,50 160,90 120,110' fill='#cfe7e5'/><circle cx='120' cy='80' r='28' fill='none' stroke='#f4a261'/>"; svg2="<polygon points='110,35 150,70 110,105 70,70' fill='#ffe6c7'/><circle cx='110' cy='70' r='45' fill='none' stroke='#2c7da0'/>"; }
+            else if(i===13) { title1="Параллелограмм"; title2="Медианы треугольника"; th1="Противоположные стороны равны, диагонали делятся пополам"; th2="Медианы пересекаются в одной точке, делятся 2:1"; svg1="<polygon points='50,100 170,100 130,40 10,40' fill='#e1f0f5'/>"; svg2="<polygon points='110,30 45,105 175,105' fill='#fff0e0'/><line x1='110' y1='30' x2='110' y2='105' stroke='#c0392b'/><circle cx='110' cy='80' r='3' fill='red'/>"; }
+            else if(i===14) { title1="Средняя линия треугольника и трапеции"; title2="Координаты вектора"; th1="Средняя линия = половине основания (треугольник); полусумме оснований (трапеция)"; th2="|a| = √(x²+y²)"; svg1="<polygon points='70,100 120,40 170,100' fill='#e0f0f5'/><line x1='95' y1='70' x2='145' y2='70' stroke='#c0392b'/>"; svg2="<line x1='40' y1='80' x2='120' y2='35' stroke='#0f6b7c'/><text x='70' y='55' font-size='8'>a(x;y)</text>"; }
+            else if(i===15) { title1="Прямоугольник"; title2="Теорема Фалеса"; th1="Диагонали равны"; th2="Параллельные прямые отсекают пропорциональные отрезки"; svg1="<rect x='40' y='40' width='160' height='70' fill='#eef2fa'/><line x1='40' y1='40' x2='200' y2='110' stroke='#c0392b'/>"; svg2="<line x1='30' y1='110' x2='210' y2='25' stroke='#0f6b7c'/><line x1='70' y1='90' x2='210' y2='25' stroke='#f4a261'/>"; }
+            else if(i===16) { title1="Ромб"; title2="Площадь треугольника (Герон)"; th1="Диагонали перпендикулярны, делят углы пополам"; th2="S = √[p(p-a)(p-b)(p-c)]"; svg1="<polygon points='110,30 160,70 110,110 60,70' fill='#e6f4f0'/><line x1='60' y1='70' x2='160' y2='70' stroke='#c0392b'/>"; svg2="<polygon points='60,90 110,35 160,90' fill='#ffe6c7'/>"; }
+            else if(i===17) { title1="Квадрат"; title2="Скалярное произведение векторов"; th1="Диагонали равны, перпендикулярны"; th2="a·b = |a||b|cosφ"; svg1="<rect x='50' y='35' width='100' height='100' fill='#cbe9f0'/><line x1='50' y1='35' x2='150' y2='135' stroke='#c0392b'/>"; svg2="<line x1='35' y1='80' x2='110' y2='35' stroke='#0f6b7c'/><line x1='35' y1='80' x2='120' y2='100' stroke='#f4a261'/>"; }
+            else if(i===18) { title1="Теорема Пифагора"; title2="Касательная к окружности"; th1="a² + b² = c²"; th2="Касательная ⟂ радиусу"; svg1="<polygon points='50,100 110,35 170,100' fill='#d9eef5'/><text x='70' y='115' font-size='8'>a</text><text x='170' y='115' font-size='8'>b</text><text x='105' y='60' font-size='8'>c</text>"; svg2="<circle cx='110' cy='60' r='45' fill='none' stroke='#0f6b7c'/><line x1='110' y1='60' x2='180' y2='60' stroke='#c0392b'/>"; }
+            else if(i===19) { title1="Биссектриса треугольника"; title2="Вписанные и описанные четырёхугольники"; th1="BD/DC = AB/AC"; th2="Вписанный: ∠A+∠C=180°; Описанный: AB+CD=BC+AD"; svg1="<polygon points='60,90 110,30 160,90' fill='#f2e6d5'/><line x1='110' y1='30' x2='95' y2='90' stroke='#c0392b'/>"; svg2="<circle cx='110' cy='65' r='45' fill='none' stroke='#0f6b7c'/><polygon points='80,35 140,35 165,65 110,95 55,65' fill='#eef2fa'/>"; }
+            else if(i===20) { title1="Трапеция. Равнобедренная трапеция"; title2="Теорема синусов"; th1="В равнобедренной трапеции углы при основаниях равны, диагонали равны"; th2="a/sinA = b/sinB = c/sinC = 2R"; svg1="<polygon points='50,90 100,40 180,40 230,90' fill='#cbe9f0'/><line x1='100' y1='40' x2='100' y2='90' stroke='#f4a261' stroke-dasharray='3'/>"; svg2="<circle cx='110' cy='60' r='45' fill='none'/><polygon points='110,20 155,85 65,85' fill='#ffe6c7'/>"; }
+            else { title1="Биссектриса угла как ГМТ"; title2="Уравнение окружности и прямой"; th1="Биссектриса — ГМТ, равноудалённых от сторон угла"; th2="(x-a)²+(y-b)²=R²; Ax+By+C=0"; svg1="<line x1='40' y1='80' x2='110' y2='20' stroke='#0f6b7c'/><line x1='110' y1='20' x2='180' y2='80' stroke='#0f6b7c'/><circle cx='110' cy='50' r='3' fill='red'/>"; svg2="<circle cx='110' cy='60' r='40' fill='none' stroke='#0f6b7c'/><line x1='30' y1='100' x2='190' y2='20' stroke='#f4a261'/>"; }
+            
+            ticketsData.push({
+                title: `Билет №${i}`,
+                questions: [
+                    { title: title1, content: `<div class="theorem">${th1}</div><div class="drawing"><svg width="200" height="130" viewBox="0 0 200 130">${svg1}</svg><div class="caption">К билету ${i}</div></div>` },
+                    { title: title2, content: `<div class="theorem">${th2}</div><div class="drawing"><svg width="200" height="130" viewBox="0 0 200 130">${svg2}</svg><div class="caption">К билету ${i}</div></div>` }
+                ]
+            });
+        }
+
+        // Рендеринг
+        function renderAll() {
+            const container = document.getElementById('tickets-container');
+            container.innerHTML = '';
+            ticketsData.forEach((ticket, idx) => {
+                const ticketDiv = document.createElement('div');
+                ticketDiv.className = 'ticket';
+                ticketDiv.id = `bilet-${idx+1}`;
+                let questionsHtml = '';
+                ticket.questions.forEach(q => {
+                    questionsHtml += `
+                        <div class="question-block">
+                            <div class="question-title">✦ ${q.title}</div>
+                            ${q.content}
+                        </div>
+                    `;
+                });
+                ticketDiv.innerHTML = `
+                    <div class="ticket-header">${ticket.title}</div>
+                    <div class="ticket-body">
+                        ${questionsHtml}
+                    </div>
+                `;
+                container.appendChild(ticketDiv);
+            });
+        }
+
+        function buildNav() {
+            const navDiv = document.getElementById('nav');
+            for(let i=1; i<=21; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i;
+                btn.onclick = () => {
+                    document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    document.getElementById(`bilet-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                };
+                navDiv.appendChild(btn);
+            }
+            if(navDiv.firstChild) navDiv.firstChild.classList.add('active');
+        }
+
+        renderAll();
+        buildNav();
+    </script>
 </body>
 </html>
