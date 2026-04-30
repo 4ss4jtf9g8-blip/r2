@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velion Agency — разработка сайтов, редизайн, боты</title>
+  <title>SquareUp — цифровая продукт-студия</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,14 +11,13 @@
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <a href="index.html" class="logo">VELION<span>.</span></a>
+        <a href="index.html" class="logo">Square<span>Up</span></a>
         <div class="nav-links" id="navLinks">
-          <a href="services.html">Услуги</a>
-          <a href="cases.html">Кейсы</a>
-          <a href="prices.html">Цены</a>
-          <a href="team.html">Команда</a>
-          <a href="contacts.html">Контакты</a>
-          <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
+          <a href="#services">Services</a>
+          <a href="#works">Works</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn btn-outline" style="padding: 8px 20px;">Contact Us</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle">☰</button>
       </nav>
@@ -26,155 +25,183 @@
   </header>
 
   <main>
+    <!-- Hero секция — точь-в-точь SquareUp -->
     <section class="hero">
       <div class="container">
-        <div class="hero-grid">
-          <h1>Сделаем ваш сайт <strong>инструментом продаж</strong></h1>
-          <p class="hero-subtitle">Разработка сайтов с нуля, редизайн, Telegram-боты и техподдержка. Доступные цены, высокое качество.</p>
-          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="prices.html" class="btn btn-primary">Рассчитать проект →</a>
-            <a href="cases.html" class="btn btn-outline">Смотреть кейсы</a>
+        <div class="hero-badge">A Digital Product Studio</div>
+        <h1>that will <span class="accent">Work.</span></h1>
+        <p class="hero-subtitle">For Startups • Enterprise leaders • Media & Publishers • Social Good</p>
+        <a href="#contact" class="btn btn-primary">Contact Us →</a>
+        <div class="hero-tags">
+          <span class="hero-tag">Product Design</span>
+          <span class="hero-tag">Web Development</span>
+          <span class="hero-tag">Mobile Apps</span>
+          <span class="hero-tag">UI/UX</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Works — портфолио -->
+    <section id="works" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our <span class="accent">Works</span></h2>
+          <p>Реальные проекты, которыми мы гордимся</p>
+        </div>
+        <div class="works-grid">
+          <div class="work-card">
+            <div class="work-image">🏥</div>
+            <div class="work-info">
+              <div class="work-category">Стоматология</div>
+              <h3 class="work-title">AMBC Михаила Агами</h3>
+              <p class="work-description">+202% конверсии, записей в 3.1 раза больше</p>
+            </div>
           </div>
-          <div class="stats">
-            <div class="stat"><h3>50+</h3><p>проектов сдано</p></div>
-            <div class="stat"><h3>30</h3><p>дней — средний срок</p></div>
-            <div class="stat"><h3>4.9★</h3><p>средняя оценка</p></div>
+          <div class="work-card">
+            <div class="work-image">🏢</div>
+            <div class="work-info">
+              <div class="work-category">Недвижимость</div>
+              <h3 class="work-title">River Park Кутузовский</h3>
+              <p class="work-description">+240% конверсии, заявок в 3.2 раза больше</p>
+            </div>
+          </div>
+          <div class="work-card">
+            <div class="work-image">🚗</div>
+            <div class="work-info">
+              <div class="work-category">Автосалон</div>
+              <h3 class="work-title">Imperium Motors</h3>
+              <p class="work-description">+272% конверсии, окупаемость 18 дней</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Services -->
+    <section id="services" class="section">
       <div class="container">
-        <h2>Наши кейсы</h2>
-        <div class="cards-grid">
-          <div class="card">
-            <span class="case-meta">🏥 Стоматология</span>
-            <h3>AMBC Михаила Агами</h3>
-            <p>После обновления сайта конверсия выросла на 202%, записей в 3.1 раза больше</p>
-            <div class="result-value" style="margin-top: 16px;">+202%</div>
-            <a href="https://www.ambc.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Посмотреть сайт →</a>
+        <div class="section-header">
+          <h2>Our <span class="accent">Services</span></h2>
+          <p>Что мы делаем для вашего бизнеса</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3>Разработка с нуля</h3>
+            <p>Полный цикл создания сайта: от прототипа до запуска</p>
           </div>
-          <div class="card">
-            <span class="case-meta">🏢 Недвижимость</span>
-            <h3>River Park Кутузовский</h3>
-            <p>Конверсия увеличилась на 240%, заявок в 3.2 раза больше</p>
-            <div class="result-value" style="margin-top: 16px;">+240%</div>
-            <a href="https://riverpark-kutuzovskiy.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Посмотреть сайт →</a>
+          <div class="service-card">
+            <div class="service-icon">🔄</div>
+            <h3>Редизайн</h3>
+            <p>Обновление дизайна и улучшение пользовательского опыта</p>
           </div>
-          <div class="card">
-            <span class="case-meta">🚗 Автосалон</span>
-            <h3>Imperium Motors</h3>
-            <p>Конверсия выросла с 2.1% до 7.8% (+272%), окупаемость 18 дней</p>
-            <div class="result-value" style="margin-top: 16px;">+272%</div>
-            <a href="https://imperiummotors.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Посмотреть сайт →</a>
+          <div class="service-card">
+            <div class="service-icon">🤖</div>
+            <h3>Telegram-боты</h3>
+            <p>Автоматизация продаж, запись, уведомления</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Техподдержка</h3>
+            <p>Быстрые правки, мониторинг, аптайм 99.9%</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Аналитика</h3>
+            <p>Настройка Яндекс.Метрики, Google Analytics, отчеты</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🔍</div>
+            <h3>SEO</h3>
+            <p>Базовая оптимизация для роста в поиске</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section cta-section">
+    <!-- Process -->
+    <section id="process" class="section">
       <div class="container">
-        <h2>Готовы к росту?</h2>
-        <p>Начните с бесплатной консультации — обсудим вашу задачу</p>
-        <a href="contacts.html" class="btn btn-primary btn-large">Связаться с нами →</a>
-      </div>
-    </section>
-  </main>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velion Agency — разработка сайтов, редизайн, боты</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="container">
-      <nav class="nav">
-        <a href="index.html" class="logo">VELION<span>.</span></a>
-        <div class="nav-links" id="navLinks">
-          <a href="services.html">Услуги</a>
-          <a href="cases.html">Кейсы</a>
-          <a href="prices.html">Цены</a>
-          <a href="team.html">Команда</a>
-          <a href="contacts.html">Контакты</a>
-          <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
+        <div class="section-header">
+          <h2>Our <span class="accent">Process</span></h2>
+          <p>Как мы работаем — прозрачно и эффективно</p>
         </div>
-        <button class="mobile-toggle" id="mobileToggle">☰</button>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <h1>Сделаем ваш сайт <strong>инструментом продаж</strong></h1>
-          <p class="hero-subtitle">Разработка сайтов с нуля, редизайн, Telegram-боты и техподдержка. Доступные цены, высокое качество.</p>
-          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="prices.html" class="btn btn-primary">Рассчитать проект →</a>
-            <a href="cases.html" class="btn btn-outline">Смотреть кейсы</a>
+        <div class="process-grid">
+          <div class="process-step">
+            <div class="process-number">1</div>
+            <h3>Анализ</h3>
+            <p>Изучаем бизнес, конкурентов и целевую аудиторию</p>
           </div>
-          <div class="stats">
-            <div class="stat"><h3>50+</h3><p>проектов сдано</p></div>
-            <div class="stat"><h3>30</h3><p>дней — средний срок</p></div>
-            <div class="stat"><h3>4.9★</h3><p>средняя оценка</p></div>
+          <div class="process-step">
+            <div class="process-number">2</div>
+            <h3>Проектирование</h3>
+            <p>Создаем прототипы и утверждаем структуру</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">3</div>
+            <h3>Разработка</h3>
+            <p>Верстка, программирование, интеграции</p>
+          </div>
+          <div class="process-step">
+            <div class="process-number">4</div>
+            <h3>Запуск</h3>
+            <p>Тестирование, запуск, обучение команды</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- About -->
+    <section id="about" class="section">
       <div class="container">
-        <h2>Наши кейсы</h2>
-        <div class="cards-grid">
-          <div class="card">
-            <span class="case-meta">🏥 Стоматология</span>
-            <h3>AMBC Михаила Агами</h3>
-            <p>После обновления сайта конверсия выросла на 202%, записей в 3.1 раза больше</p>
-            <div class="result-value" style="margin-top: 16px;">+202%</div>
-            <a href="https://www.ambc.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Посмотреть сайт →</a>
+        <div class="about-grid">
+          <div>
+            <h2>About <span class="accent">SquareUp</span></h2>
+            <p style="color: var(--text-secondary); margin-bottom: 24px;">Мы — веб-агентство, которое помогает бизнесу расти через инновационные решения и удобные для пользователей веб-сайты.</p>
+            <div class="about-stats">
+              <div class="about-stat">
+                <h4>50+</h4>
+                <p>проектов</p>
+              </div>
+              <div class="about-stat">
+                <h4>30</h4>
+                <p>дней средний срок</p>
+              </div>
+              <div class="about-stat">
+                <h4>4.9★</h4>
+                <p>средняя оценка</p>
+              </div>
+            </div>
           </div>
-          <div class="card">
-            <span class="case-meta">🏢 Недвижимость</span>
-            <h3>River Park Кутузовский</h3>
-            <p>Конверсия увеличилась на 240%, заявок в 3.2 раза больше</p>
-            <div class="result-value" style="margin-top: 16px;">+240%</div>
-            <a href="https://riverpark-kutuzovskiy.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Посмотреть сайт →</a>
-          </div>
-          <div class="card">
-            <span class="case-meta">🚗 Автосалон</span>
-            <h3>Imperium Motors</h3>
-            <p>Конверсия выросла с 2.1% до 7.8% (+272%), окупаемость 18 дней</p>
-            <div class="result-value" style="margin-top: 16px;">+272%</div>
-            <a href="https://imperiummotors.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px; width: 100%;">Посмотреть сайт →</a>
+          <div>
+            <h3>Наша миссия</h3>
+            <p style="color: var(--text-secondary);">Создавать цифровые продукты, которые решают реальные задачи бизнеса и приносят измеримый результат. Мы не просто делаем сайты — мы строим инструменты для роста.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- БЛОК "СОЗДАВАЙТЕ УСПЕХ" — ТОЧЬ-В-ТОЧЬ КАК НА СКРИНШОТЕ -->
-    <section class="section success-section">
+    <!-- Contact Us -->
+    <section id="contact" class="section">
       <div class="container">
-        <div class="success-grid">
-          <h2 class="success-title">СОЗДАВАЙТЕ <span class="success-highlight">УСПЕХ</span></h2>
-          <p class="success-description">
-            Мы — веб-агентство, которое помогает бизнесу расти через инновационные решения 
-            и удобные для пользователей веб-сайты. Присоединяйтесь к нам!
-          </p>
-          <a href="contacts.html" class="btn btn-primary success-btn">Начать проект →</a>
+        <div class="section-header">
+          <h2>Contact <span class="accent">Us</span></h2>
+          <p>Готовы обсудить ваш проект? Напишите нам</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section cta-section">
-      <div class="container">
-        <h2>Готовы к росту?</h2>
-        <p>Начните с бесплатной консультации — обсудим вашу задачу</p>
-        <a href="contacts.html" class="btn btn-primary btn-large">Связаться с нами →</a>
+        <div class="contact-form">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" placeholder="Ваше имя" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea rows="4" placeholder="Расскажите о проекте" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить →</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
@@ -182,14 +209,34 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><h4>Velion Agency</h4><p>Разработка сайтов, редизайн, боты и поддержка</p></div>
-        <div><h4>Контакты</h4><a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a><a href="https://t.me/velion_manager">Telegram: @velion_manager</a></div>
-        <div><h4>Документы</h4><a href="privacy.html">Политика конфиденциальности</a><a href="consent.html">Согласие на обработку ПД</a><a href="offer.html">Договор оферты</a><a href="terms.html">Пользовательское соглашение</a></div>
-        <div><h4>Партнёры</h4><span>Timeweb</span><span>Reg.ru</span><span>Yandex Cloud</span></div>
+        <div>
+          <div class="footer-logo">Square<span>Up</span></div>
+          <p>Цифровая продукт-студия</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="#">Разработка с нуля</a>
+          <a href="#">Редизайн</a>
+          <a href="#">Telegram-боты</a>
+          <a href="#">Техподдержка</a>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Works</a>
+          <a href="#">Process</a>
+          <a href="#">Contact</a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a>
+          <a href="https://t.me/velion_manager" target="_blank">Telegram: @velion_manager</a>
+        </div>
       </div>
-      <div class="copyright">© 2025 Velion Agency. Все права защищены.</div>
+      <div class="copyright">© 2025 SquareUp. Все права защищены.</div>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
