@@ -1,6 +1,7 @@
 // мобильное меню
 const toggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
+
 if (toggle) {
   toggle.addEventListener('click', () => {
     navLinks.classList.toggle('open');
@@ -10,7 +11,7 @@ if (toggle) {
 // закрываем меню при клике на ссылку
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks?.classList.remove('open');
+    if (navLinks) navLinks.classList.remove('open');
   });
 });
 
@@ -43,10 +44,9 @@ function updatePrice() {
   }
 
   if (priceSpan) {
-    // анимация изменения цены
     priceSpan.style.transform = 'scale(1.05)';
     setTimeout(() => {
-      priceSpan.style.transform = 'scale(1)';
+      if (priceSpan) priceSpan.style.transform = 'scale(1)';
     }, 200);
     priceSpan.innerText = base.toLocaleString('ru-RU');
   }
@@ -76,34 +76,37 @@ const revealOnScroll = () => {
 window.addEventListener('scroll', revealOnScroll);
 revealOnScroll();
 
-// добавляем класс reveal всем секциям и карточкам
-document.querySelectorAll('.section, .card, .price-card, .team-card, .calculator').forEach(el => {
-  el.classList.add('reveal');
+// добавляем класс reveal всем секциям и карточкам, если их нет
+document.querySelectorAll('.section, .card, .price-card, .team-card, .calculator, .hero, .footer-grid').forEach(el => {
+  if (!el.classList.contains('reveal')) {
+    el.classList.add('reveal');
+  }
 });
 
-// создаём плавающие частицы
-function createParticles() {
-  const particleCount = 50;
-  for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = 10 + Math.random() * 10 + 's';
-    particle.style.opacity = 0.2 + Math.random() * 0.5;
-    particle.style.width = (1 + Math.random() * 3) + 'px';
-    particle.style.height = particle.style.width;
-    document.body.appendChild(particle);
+// создаём плавающие частицы (только если их ещё нет)
+if (document.querySelectorAll('.particle').length === 0) {
+  function createParticles() {
+    const particleCount = 50;
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 15 + 's';
+      particle.style.animationDuration = 10 + Math.random() * 10 + 's';
+      particle.style.opacity = 0.2 + Math.random() * 0.5;
+      particle.style.width = (1 + Math.random() * 3) + 'px';
+      particle.style.height = particle.style.width;
+      document.body.appendChild(particle);
+    }
   }
+  createParticles();
 }
-
-createParticles();
 
 // плавная прокрутка для якорных ссылок
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
-    if (href !== '#' && href !== '') {
+    if (href !== '#' && href !== '' && href !== '/') {
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
@@ -121,30 +124,6 @@ window.addEventListener('load', () => {
       loader.classList.add('hide');
     }, 500);
   }
-});
-
-// hover-эффект для кнопок с ripple
-document.querySelectorAll('.btn').forEach(btn => {
-  btn.addEventListener('click', function(e) {
-    const ripple = document.createElement('span');
-    ripple.classList.add('ripple');
-    const rect = this.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = e.clientX - rect.left - size/2 + 'px';
-    ripple.style.top = e.clientY - rect.top - size/2 + 'px';
-    this.style.position = 'relative';
-    this.style.overflow = 'hidden';
-    ripple.style.position = 'absolute';
-    ripple.style.borderRadius = '50%';
-    ripple.style.background = 'rgba(255,255,255,0.3)';
-    ripple.style.transform = 'scale(0)';
-    ripple.style.transition = 'transform 0.5s, opacity 0.5s';
-    ripple.style.pointerEvents = 'none';
-    this.appendChild(ripple);
-    setTimeout(() => { ripple.style.transform = 'scale(1)'; ripple.style.opacity = '0'; }, 10);
-    setTimeout(() => { ripple.remove(); }, 500);
-  });
 });
 
 // счётчик для stats с анимацией
@@ -171,15 +150,26 @@ const animateNumbers = () => {
 };
 
 // запускаем анимацию цифр при появлении
-const observer = new IntersectionObserver((entries) => {
+const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       animateNumbers();
-      observer.unobserve(entry.target);
+      statsObserver.unobserve(entry.target);
     }
   });
 });
 
 document.querySelectorAll('.stats').forEach(statBlock => {
-  observer.observe(statBlock);
+  statsObserver.observe(statBlock);
 });
+
+// предотвращаем конфликты с формами
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+    form.reset();
+  });
+});
+
+console.log('Velion Agency — сайт полностью загружен и работает!');

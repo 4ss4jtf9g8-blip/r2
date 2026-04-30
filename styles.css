@@ -304,6 +304,7 @@ h2::after {
   display: flex;
   gap: 48px;
   margin-top: 32px;
+  flex-wrap: wrap;
 }
 
 .stat {
@@ -410,7 +411,7 @@ h2::after {
   font-weight: 500;
 }
 
-select, input[type="number"] {
+select, input[type="number"], input[type="text"], input[type="email"], textarea {
   width: 100%;
   padding: 14px;
   background: rgba(0, 0, 0, 0.4);
@@ -421,7 +422,7 @@ select, input[type="number"] {
   transition: var(--transition);
 }
 
-select:focus, input:focus {
+select:focus, input:focus, textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
@@ -458,6 +459,7 @@ select:focus, input:focus {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  transition: transform 0.2s ease;
 }
 
 /* team */
@@ -521,6 +523,12 @@ select:focus, input:focus {
   transform: translateX(5px);
 }
 
+.footer span {
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 8px;
+}
+
 .copyright {
   text-align: center;
   padding-top: 32px;
@@ -539,6 +547,7 @@ select:focus, input:focus {
   opacity: 0.5;
   pointer-events: none;
   animation: float 15s infinite linear;
+  z-index: 9999;
 }
 
 @keyframes float {
@@ -648,5 +657,8 @@ button:active, .btn:active {
   }
   .hero {
     padding: 80px 0 40px;
+  }
+  .calculator {
+    padding: 20px;
   }
 }
