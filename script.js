@@ -14,10 +14,15 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// динамическое изменение полей в калькуляторе в зависимости от услуги
+// калькулятор
 const serviceSelect = document.getElementById('serviceType');
 const pagesField = document.getElementById('pagesField');
 const complexityField = document.getElementById('complexityField');
+const pagesInput = document.getElementById('pages');
+const complexitySelect = document.getElementById('complexity');
+const adminCheck = document.getElementById('needsAdmin');
+const crmCheck = document.getElementById('needsCrm');
+const priceSpan = document.getElementById('calculatedPrice');
 
 function toggleCalculatorFields() {
   const service = serviceSelect?.value;
@@ -30,13 +35,6 @@ function toggleCalculatorFields() {
     if (complexityField) complexityField.style.display = 'block';
   }
 }
-
-// калькулятор цен
-const pagesInput = document.getElementById('pages');
-const complexitySelect = document.getElementById('complexity');
-const adminCheck = document.getElementById('needsAdmin');
-const crmCheck = document.getElementById('needsCrm');
-const priceSpan = document.getElementById('calculatedPrice');
 
 function updatePrice() {
   let base = 0;
@@ -81,7 +79,7 @@ if (serviceSelect) {
   updatePrice();
 }
 
-// формы и контакты
+// формы
 document.querySelectorAll('form').forEach(form => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -90,20 +88,19 @@ document.querySelectorAll('form').forEach(form => {
   });
 });
 
-// плавное появление элементов при скролле
-const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+// анимация при скролле
+const fadeElements = document.querySelectorAll('.card, .team-card, .price-card, .stat, .case-card, .calculator, .cta-section');
+
+fadeElements.forEach(el => {
+  el.classList.add('fade-up');
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.classList.add('visible');
     }
   });
-}, observerOptions);
+}, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
 
-document.querySelectorAll('.card, .team-card, .price-card, .stat, .case-card').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(el);
-});
+fadeElements.forEach(el => observer.observe(el));
