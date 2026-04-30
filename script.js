@@ -1,151 +1,109 @@
-// ===== 📱 МОБИЛЬНОЕ МЕНЮ =====
+// мобильное меню
 const toggle = document.getElementById('mobileToggle');
 const navLinks = document.getElementById('navLinks');
 
-if (toggle && navLinks) {
+if (toggle) {
   toggle.addEventListener('click', () => {
     navLinks.classList.toggle('open');
-    document.body.classList.toggle('menu-open');
-  });
-
-  // закрытие по клику на ссылку
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      document.body.classList.remove('menu-open');
-    });
-  });
-
-  // закрытие при клике вне меню
-  document.addEventListener('click', (e) => {
-    if (!navLinks.contains(e.target) && !toggle.contains(e.target)) {
-      navLinks.classList.remove('open');
-      document.body.classList.remove('menu-open');
-    }
   });
 }
 
-
-// ===== ✨ ПЛАВНЫЙ СКРОЛЛ =====
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (navLinks) navLinks.classList.remove('open');
   });
 });
 
+// динамическое изменение полей в калькуляторе в зависимости от услуги
+const serviceSelect = document.getElementById('serviceType');
+const pagesField = document.getElementById('pagesField');
+const complexityField = document.getElementById('complexityField');
 
-// ===== 📬 ФОРМА (УЛУЧШЕННАЯ) =====
-const form = document.getElementById('contactForm');
-
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const button = form.querySelector('button');
-    button.disabled = true;
-    button.innerText = 'Отправка...';
-
-    setTimeout(() => {
-      button.innerText = 'Отправлено ✓';
-      button.style.background = '#00cc66';
-
-      setTimeout(() => {
-        alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
-        form.reset();
-        button.disabled = false;
-        button.innerText = 'Отправить';
-        button.style.background = '';
-      }, 1000);
-    }, 1200);
-  });
+function toggleCalculatorFields() {
+  const service = serviceSelect?.value;
+  if (pagesField) pagesField.style.display = 'none';
+  if (complexityField) complexityField.style.display = 'none';
+  
+  if (service === 'redesign' || service === 'from-scratch') {
+    if (pagesField) pagesField.style.display = 'block';
+  } else if (service === 'bot') {
+    if (complexityField) complexityField.style.display = 'block';
+  }
 }
 
+// калькулятор цен
+const pagesInput = document.getElementById('pages');
+const complexitySelect = document.getElementById('complexity');
+const adminCheck = document.getElementById('needsAdmin');
+const crmCheck = document.getElementById('needsCrm');
+const priceSpan = document.getElementById('calculatedPrice');
 
-// ===== 🎬 АНИМАЦИИ ПРИ СКРОЛЛЕ =====
-const fadeElements = document.querySelectorAll(
-  '.card, .service-card, .work-card, .process-step, .about-stat, .fade-up'
-);
+function updatePrice() {
+  let base = 0;
+  const service = serviceSelect?.value;
+  let pages = parseInt(pagesInput?.value) || 1;
+  if (pages < 1) pages = 1;
+  
+  const complexity = complexitySelect?.value;
 
-// добавляем базовый класс
-fadeElements.forEach(el => el.classList.add('fade-up'));
+  if (service === 'landing') {
+    base = 2000;
+  } else if (service === 'redesign') {
+    base = 3200 + (pages - 1) * 700;
+  } else if (service === 'from-scratch') {
+    base = 5000 + (pages - 1) * 800;
+  } else if (service === 'bot') {
+    if (complexity === 'easy') base = 3700;
+    else if (complexity === 'medium') base = 6000;
+    else if (complexity === 'hard') base = 9000;
+  } else if (service === 'support') {
+    base = 1000;
+  }
 
+  if (adminCheck?.checked && service !== 'support') base += 3000;
+  if (crmCheck?.checked && service !== 'support') base += 5000;
+
+  if (priceSpan) {
+    priceSpan.innerText = base.toLocaleString('ru-RU');
+  }
+}
+
+if (serviceSelect) {
+  serviceSelect.addEventListener('change', () => {
+    toggleCalculatorFields();
+    updatePrice();
+  });
+  if (pagesInput) pagesInput.addEventListener('input', updatePrice);
+  if (complexitySelect) complexitySelect.addEventListener('change', updatePrice);
+  if (adminCheck) adminCheck.addEventListener('change', updatePrice);
+  if (crmCheck) crmCheck.addEventListener('change', updatePrice);
+  toggleCalculatorFields();
+  updatePrice();
+}
+
+// формы и контакты
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Спасибо! Мы свяжемся с вами.');
+    form.reset();
+  });
+});
+
+// плавное появление элементов при скролле
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
     }
   });
-}, {
-  threshold: 0.15
-});
+}, observerOptions);
 
-fadeElements.forEach(el => observer.observe(el));
-
-
-// ===== 🧠 ПАРАЛЛАКС (ЛЕГКИЙ ВАУ-ЭФФЕКТ) =====
-const glow = document.querySelector('.glow');
-
-window.addEventListener('mousemove', (e) => {
-  if (!glow) return;
-
-  const x = e.clientX / window.innerWidth;
-  const y = e.clientY / window.innerHeight;
-
-  glow.style.transform = `translate(${x * 40}px, ${y * 40}px)`;
-});
-
-
-// ===== 🪄 ХОВЕР-ПОДСВЕТКА КАРТОЧЕК =====
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    card.style.setProperty('--x', `${x}px`);
-    card.style.setProperty('--y', `${y}px`);
-  });
-});
-
-
-// ===== ⬆️ КНОПКА "НАВЕРХ" =====
-const scrollBtn = document.createElement('button');
-scrollBtn.innerText = '↑';
-scrollBtn.classList.add('scroll-top');
-document.body.appendChild(scrollBtn);
-
-scrollBtn.style.cssText = `
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 10px 14px;
-  border-radius: 50%;
-  border: none;
-  background: #00cc66;
-  color: black;
-  font-size: 18px;
-  cursor: pointer;
-  opacity: 0;
-  transition: 0.3s;
-  z-index: 999;
-`;
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollBtn.style.opacity = '1';
-  } else {
-    scrollBtn.style.opacity = '0';
-  }
-});
-
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+document.querySelectorAll('.card, .team-card, .price-card, .stat, .case-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
 });

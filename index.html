@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SquareUp — цифровая продукт-студия</title>
+  <title>Команда — Velion Agency</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <a href="index.html" class="logo">Square<span>Up</span></a>
+        <a href="index.html" class="logo">VELION<span>.</span></a>
         <div class="nav-links" id="navLinks">
-          <a href="#services">Services</a>
-          <a href="#works">Works</a>
-          <a href="#process">Process</a>
-          <a href="#about">About</a>
-          <a href="#contact" class="btn btn-outline" style="padding: 8px 20px;">Contact Us</a>
+          <a href="services.html">Услуги</a>
+          <a href="cases.html">Кейсы</a>
+          <a href="prices.html">Цены</a>
+          <a href="team.html">Команда</a>
+          <a href="contacts.html">Контакты</a>
+          <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle">☰</button>
       </nav>
@@ -26,203 +26,58 @@
   </header>
 
   <main>
-
-    <!-- HERO -->
     <section class="hero">
-      <div class="glow"></div>
-
-      <div class="container hero-content">
-        <div class="hero-badge">A Digital Product Studio</div>
-        <h1>that will <span class="accent">Work.</span></h1>
-        <p class="hero-subtitle">For Startups • Enterprise leaders • Media & Publishers • Social Good</p>
-        <a href="#contact" class="btn btn-primary">Contact Us →</a>
-
-        <div class="hero-tags">
-          <span class="hero-tag">Product Design</span>
-          <span class="hero-tag">Web Development</span>
-          <span class="hero-tag">Mobile Apps</span>
-          <span class="hero-tag">UI/UX</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORKS -->
-    <section id="works" class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Our <span class="accent">Works</span></h2>
-          <p>Реальные проекты, которыми мы гордимся</p>
-        </div>
-
-        <div class="works-grid">
-
-          <div class="work-card card fade-up">
-            <div class="work-image">🏥</div>
-            <div class="work-info">
-              <div class="work-category">Стоматология</div>
-              <h3 class="work-title">AMBC Михаила Агами</h3>
-              <p class="work-description">+202% конверсии, записей в 3.1 раза больше</p>
-            </div>
-          </div>
-
-          <div class="work-card card fade-up">
-            <div class="work-image">🏢</div>
-            <div class="work-info">
-              <div class="work-category">Недвижимость</div>
-              <h3 class="work-title">River Park Кутузовский</h3>
-              <p class="work-description">+240% конверсии, заявок в 3.2 раза больше</p>
-            </div>
-          </div>
-
-          <div class="work-card card fade-up">
-            <div class="work-image">🚗</div>
-            <div class="work-info">
-              <div class="work-category">Автосалон</div>
-              <h3 class="work-title">Imperium Motors</h3>
-              <p class="work-description">+272% конверсии, окупаемость 18 дней</p>
-            </div>
-          </div>
-
+        <div class="hero-grid">
+          <h1>Наша <strong>команда</strong></h1>
+          <p class="hero-subtitle">Профессионалы, которые любят своё дело</p>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section">
+    <section class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Our <span class="accent">Services</span></h2>
-          <p>Что мы делаем для вашего бизнеса</p>
-        </div>
-
-        <div class="services-grid">
-
-          <div class="service-card card fade-up">
-            <div class="service-icon">🚀</div>
-            <h3>Разработка с нуля</h3>
-            <p>Полный цикл создания сайта</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="CEO" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 16px;">
+            <h3>Артём Соколов</h3>
+            <p style="color: var(--green);">CEO / Project Manager</p>
+            <p>7 лет в диджитале. Управляет проектами, отвечает за качество и сроки.</p>
           </div>
-
-          <div class="service-card card fade-up">
-            <div class="service-icon">🔄</div>
-            <h3>Редизайн</h3>
-            <p>Обновление UX/UI</p>
+          <div class="team-card">
+            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Designer" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 16px;">
+            <h3>Анна Волкова</h3>
+            <p style="color: var(--green);">Lead Designer</p>
+            <p>5 лет в веб-дизайне. Создаёт интерфейсы, которые продают.</p>
           </div>
-
-          <div class="service-card card fade-up">
-            <div class="service-icon">🤖</div>
-            <h3>Telegram-боты</h3>
-            <p>Автоматизация</p>
+          <div class="team-card">
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Developer" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 16px;">
+            <h3>Дмитрий Козлов</h3>
+            <p style="color: var(--green);">Backend Developer</p>
+            <p>Python, Node.js, Telegram Bot API. Строит ботов и интеграции.</p>
           </div>
-
-          <div class="service-card card fade-up">
-            <div class="service-icon">⚡</div>
-            <h3>Техподдержка</h3>
-            <p>Мониторинг и правки</p>
+          <div class="team-card">
+            <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="QA" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 16px;">
+            <h3>Екатерина Морозова</h3>
+            <p style="color: var(--green);">Support & QA</p>
+            <p>Контролирует качество, тестирует и поддерживает проекты после запуска.</p>
           </div>
-
-          <div class="service-card card fade-up">
-            <div class="service-icon">📊</div>
-            <h3>Аналитика</h3>
-            <p>Метрика и отчеты</p>
-          </div>
-
-          <div class="service-card card fade-up">
-            <div class="service-icon">🔍</div>
-            <h3>SEO</h3>
-            <p>Рост в поиске</p>
-          </div>
-
         </div>
       </div>
     </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Our <span class="accent">Process</span></h2>
-        </div>
-
-        <div class="process-grid">
-
-          <div class="process-step fade-up">
-            <div class="process-number">1</div>
-            <h3>Анализ</h3>
-          </div>
-
-          <div class="process-step fade-up">
-            <div class="process-number">2</div>
-            <h3>Проектирование</h3>
-          </div>
-
-          <div class="process-step fade-up">
-            <div class="process-number">3</div>
-            <h3>Разработка</h3>
-          </div>
-
-          <div class="process-step fade-up">
-            <div class="process-number">4</div>
-            <h3>Запуск</h3>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="about-grid">
-
-          <div class="fade-up">
-            <h2>About <span class="accent">SquareUp</span></h2>
-            <p>Мы создаём сайты, которые реально работают и приносят результат.</p>
-          </div>
-
-          <div class="fade-up">
-            <h3>Наша миссия</h3>
-            <p>Создавать продукты для роста бизнеса.</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Contact <span class="accent">Us</span></h2>
-        </div>
-
-        <div class="contact-form fade-up">
-          <form id="contactForm">
-            <div class="form-group">
-              <input type="text" placeholder="Ваше имя" required>
-            </div>
-            <div class="form-group">
-              <input type="email" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-              <textarea rows="4" placeholder="Расскажите о проекте" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить →</button>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
   </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer-logo">Square<span>Up</span></div>
-      <p>© 2025 SquareUp</p>
+      <div class="footer-grid">
+        <div><h4>Velion Agency</h4><p>Разработка сайтов, редизайн, боты и поддержка</p></div>
+        <div><h4>Контакты</h4><a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a><a href="https://t.me/velion_manager" target="_blank">Telegram: @velion_manager</a></div>
+        <div><h4>Документы</h4><a href="privacy.html">Политика конфиденциальности</a><a href="consent.html">Согласие на обработку ПД</a><a href="offer.html">Договор оферты</a><a href="terms.html">Пользовательское соглашение</a></div>
+        <div><h4>Партнёры</h4><span>Timeweb</span><span>Reg.ru</span><span>Yandex Cloud</span></div>
+      </div>
+      <div class="copyright">© 2025 Velion Agency. Все права защищены.</div>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
