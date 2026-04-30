@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Контакты — Velion Agency</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
           <a href="prices.html">Цены</a>
           <a href="team.html">Команда</a>
           <a href="contacts.html">Контакты</a>
-          <a href="prices.html" class="btn btn-primary" style="padding: 8px 20px;">Обсудить проект →</a>
+          <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle">☰</button>
       </nav>
@@ -26,58 +26,45 @@
   </header>
 
   <main>
-    <section class="hero" style="padding: 60px 0 40px;">
+    <section class="hero">
       <div class="container">
-        <h1>Свяжитесь с нами</h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px;">Мы на связи с 10:00 до 20:00 по МСК. Ответим в течение часа.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px;">
-          <!-- Контактная информация -->
-          <div>
-            <h2>Контакты</h2>
-            <div style="margin-top: 24px;">
-              <p style="margin-bottom: 16px;"><strong>📞 Телефон</strong><br><a href="tel:+7XXX" style="color: var(--accent);">+7 (XXX) XXX-XX-XX</a></p>
-              <p style="margin-bottom: 16px;"><strong>✉️ Email</strong><br><a href="mailto:hello@velionagency.ru" style="color: var(--accent);">hello@velionagency.ru</a></p>
-              <p style="margin-bottom: 16px;"><strong>💬 Telegram</strong><br><a href="#" style="color: var(--accent);">@velion_agency</a></p>
-              <p style="margin-bottom: 16px;"><strong>📱 WhatsApp</strong><br><a href="#" style="color: var(--accent);">+7 (XXX) XXX-XX-XX</a></p>
-              <p style="margin-bottom: 16px;"><strong>📍 Адрес</strong><br>Москва, ул. Примерная, д. 12<br><a href="#" style="color: var(--accent);">Открыть на карте →</a></p>
-            </div>
-          </div>
-
-          <!-- Форма обратной связи -->
-          <div>
-            <h2>Напишите нам</h2>
-            <form style="margin-top: 24px;">
-              <div style="margin-bottom: 16px;">
-                <label style="display: block; margin-bottom: 8px;">Ваше имя</label>
-                <input type="text" placeholder="Артём" style="width: 100%; padding: 12px; background: var(--surface-light); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text);">
-              </div>
-              <div style="margin-bottom: 16px;">
-                <label style="display: block; margin-bottom: 8px;">Телефон или Telegram</label>
-                <input type="text" placeholder="+7 XXX XXX-XX-XX или @username" style="width: 100%; padding: 12px; background: var(--surface-light); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text);">
-              </div>
-              <div style="margin-bottom: 24px;">
-                <label style="display: block; margin-bottom: 8px;">Что нужно сделать?</label>
-                <textarea rows="4" placeholder="Опишите проект или вопрос..." style="width: 100%; padding: 12px; background: var(--surface-light); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text);"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить →</button>
-              <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 12px;">Нажимая кнопку, вы соглашаетесь с <a href="#">политикой конфиденциальности</a></p>
-            </form>
-          </div>
+        <div class="hero-grid">
+          <h1>Свяжитесь <strong>с нами</strong></h1>
+          <p class="hero-subtitle">Мы на связи 24/7. Ответим в течение часа.</p>
         </div>
       </div>
     </section>
 
-    <!-- Карта (заглушка) -->
     <section class="section">
       <div class="container">
-        <h2>Мы здесь</h2>
-        <div style="background: var(--surface-light); height: 300px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; border: 1px solid var(--border);">
-          <p style="color: var(--text-secondary);">📍 Москва, ул. Примерная, д. 12<br><a href="#" style="color: var(--accent);">Открыть в Яндекс.Картах →</a></p>
+        <div class="contacts-grid">
+          <div class="contact-info">
+            <h2>Контакты</h2>
+            <div style="margin-top: 24px;">
+              <p><strong>📧 Email</strong><br><a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a></p>
+              <p><strong>💬 Telegram</strong><br><a href="https://t.me/velion_manager" target="_blank">@velion_manager</a></p>
+              <p><strong>📱 WhatsApp</strong><br><a href="https://wa.me/70000000000" target="_blank">+7 (XXX) XXX-XX-XX</a></p>
+            </div>
+          </div>
+
+          <div>
+            <h2>Напишите нам</h2>
+            <form style="margin-top: 24px;">
+              <div style="margin-bottom: 16px;">
+                <label>Ваше имя</label>
+                <input type="text" placeholder="Алексей">
+              </div>
+              <div style="margin-bottom: 16px;">
+                <label>Telegram или Email</label>
+                <input type="text" placeholder="@username или email@example.com">
+              </div>
+              <div style="margin-bottom: 24px;">
+                <label>Что нужно сделать?</label>
+                <textarea rows="4" placeholder="Опишите проект или вопрос..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Отправить →</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -86,10 +73,28 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><h4>Velion Agency</h4><p>Редизайн, боты, поддержка</p></div>
-        <div><h4>Контакты</h4><a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a><a href="mailto:hello@velionagency.ru">hello@velionagency.ru</a><a href="#">Telegram: @velion_agency</a></div>
-        <div><h4>Документы</h4><a href="#">Политика конфиденциальности</a><a href="#">Согласие на обработку ПД</a><a href="#">Договор оферты</a><a href="#">Пользовательское соглашение</a></div>
-        <div><h4>Партнёры</h4><span>Timeweb</span><span>Reg.ru</span><span>Yandex Cloud</span></div>
+        <div>
+          <h4>Velion Agency</h4>
+          <p>Разработка сайтов, редизайн, боты и поддержка</p>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a>
+          <a href="https://t.me/velion_manager" target="_blank">Telegram: @velion_manager</a>
+        </div>
+        <div>
+          <h4>Документы</h4>
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="consent.html">Согласие на обработку ПД</a>
+          <a href="offer.html">Договор оферты</a>
+          <a href="terms.html">Пользовательское соглашение</a>
+        </div>
+        <div>
+          <h4>Партнёры</h4>
+          <span>Timeweb</span>
+          <span>Reg.ru</span>
+          <span>Yandex Cloud</span>
+        </div>
       </div>
       <div class="copyright">© 2025 Velion Agency. Все права защищены.</div>
     </div>

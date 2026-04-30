@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Цены и калькулятор — Velion Agency</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
           <a href="prices.html">Цены</a>
           <a href="team.html">Команда</a>
           <a href="contacts.html">Контакты</a>
-          <a href="prices.html" class="btn btn-primary" style="padding: 8px 20px;">Обсудить проект →</a>
+          <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle">☰</button>
       </nav>
@@ -26,89 +26,56 @@
   </header>
 
   <main>
-    <section class="hero" style="padding: 60px 0 40px;">
+    <section class="hero">
       <div class="container">
-        <h1>Сколько стоит проект?</h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px;">Прозрачные цены. Калькулятор даст примерную стоимость за 30 секунд.</p>
-      </div>
-    </section>
-
-    <!-- Пакетные цены -->
-    <section class="section">
-      <div class="container">
-        <h2>Готовые пакеты</h2>
-        <div class="cards-grid">
-          <div class="price-card">
-            <h3>Редизайн — Базовый</h3>
-            <div class="price">35 000 ₽</div>
-            <ul style="margin: 16px 0; padding-left: 20px; color: var(--text-secondary);">
-              <li>До 5 страниц</li>
-              <li>Адаптивная вёрстка</li>
-              <li>Tilda / конструктор</li>
-              <li>Базовая SEO-разметка</li>
-              <li>Срок: 14 дней</li>
-            </ul>
-          </div>
-          <div class="price-card">
-            <h3>Редизайн — Оптимальный</h3>
-            <div class="price">70 000 ₽</div>
-            <ul style="margin: 16px 0; padding-left: 20px; color: var(--text-secondary);">
-              <li>До 10 страниц</li>
-              <li>Кастомный дизайн в Figma</li>
-              <li>CRM-интеграция</li>
-              <li>Настройка аналитики</li>
-              <li>Срок: 25–30 дней</li>
-            </ul>
-          </div>
-          <div class="price-card">
-            <h3>Редизайн — VIP</h3>
-            <div class="price">130 000 ₽</div>
-            <ul style="margin: 16px 0; padding-left: 20px; color: var(--text-secondary);">
-              <li>Без лимита страниц</li>
-              <li>UX-аудит</li>
-              <li>Анимации</li>
-              <li>Поддержка 3 месяца</li>
-              <li>Приоритетная очередь</li>
-            </ul>
-          </div>
+        <div class="hero-grid">
+          <h1>Сколько стоит <strong>проект?</strong></h1>
+          <p class="hero-subtitle">Прозрачные цены. Калькулятор даст точную стоимость за 30 секунд.</p>
         </div>
       </div>
     </section>
 
-    <!-- Калькулятор цен (интерактивный) -->
+    <!-- Калькулятор -->
     <section class="section">
       <div class="container">
-        <h2>Калькулятор стоимости</h2>
-        <p style="margin-bottom: 24px;">Выберите параметры — получите примерную цену.</p>
-        
+        <h2>📊 Калькулятор стоимости</h2>
         <div class="calculator">
           <div class="calc-field">
             <label>Тип услуги</label>
             <select id="serviceType">
+              <option value="landing">Лендинг</option>
               <option value="redesign">Редизайн сайта</option>
-              <option value="landing">Лендинг (одностраничный)</option>
+              <option value="from-scratch">Разработка сайта с нуля</option>
               <option value="bot">Telegram-бот</option>
-              <option value="support">Техподдержка (абонемент)</option>
+              <option value="support">Техподдержка</option>
             </select>
           </div>
 
-          <div class="calc-field" id="pagesField">
+          <div class="calc-field" id="pagesField" style="display:none;">
             <label>Количество страниц</label>
-            <input type="number" id="pages" value="5" min="1" max="50">
+            <input type="number" id="pages" value="1" min="1" max="50">
+          </div>
+
+          <div class="calc-field" id="complexityField" style="display:none;">
+            <label>Сложность бота</label>
+            <select id="complexity">
+              <option value="easy">Легкий — 3 700 ₽</option>
+              <option value="medium">Средний — 6 000 ₽</option>
+              <option value="hard">Сложный — 9 000 ₽+</option>
+            </select>
           </div>
 
           <div class="calc-field">
             <div class="checkbox-group">
-              <label><input type="checkbox" id="needsAdmin"> Нужна админ-панель (+8 000 ₽ для редизайна, +10 000 ₽ для бота)</label>
-              <label><input type="checkbox" id="needsCrm"> Интеграция с CRM (+12 000 ₽)</label>
+              <label><input type="checkbox" id="needsAdmin"> + Админ-панель (+3 000 ₽)</label>
+              <label><input type="checkbox" id="needsCrm"> + Интеграция с CRM (+5 000 ₽)</label>
             </div>
           </div>
 
           <div class="price-result">
-            <div style="margin-bottom: 8px;">ОРИЕНТИРОВОЧНАЯ СТОИМОСТЬ</div>
-            <div class="total" id="calculatedPrice">35 000</div>
-            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">₽</div>
-            <div style="font-size: 0.75rem; margin-top: 8px;">* Точная цена — после бесплатной консультации</div>
+            <div style="margin-bottom: 8px;">ИТОГОВАЯ СТОИМОСТЬ</div>
+            <div class="total" id="calculatedPrice">2 000</div>
+            <div style="font-size: 0.75rem; margin-top: 8px;">₽</div>
           </div>
 
           <a href="contacts.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Отправить заявку на точный расчёт →</a>
@@ -116,11 +83,45 @@
       </div>
     </section>
 
-    <section class="section" style="text-align: center;">
+    <!-- Прайс-лист -->
+    <section class="section">
       <div class="container">
-        <h2>Остались вопросы?</h2>
-        <p style="margin-bottom: 24px;">Свяжитесь с нами — мы подготовим индивидуальное предложение под ваш бюджет.</p>
-        <a href="contacts.html" class="btn btn-outline">Написать нам</a>
+        <h2>💰 Прайс-лист</h2>
+        <div class="cards-grid">
+          <div class="price-card">
+            <h3>Лендинг</h3>
+            <div class="price">2 000 ₽</div>
+            <p>Одностраничный сайт под ключ</p>
+          </div>
+          <div class="price-card">
+            <h3>Редизайн сайта</h3>
+            <div class="price">3 200 ₽ + 700 ₽/страница</div>
+            <p>Первая страница — 3 200 ₽, каждая следующая +700 ₽</p>
+          </div>
+          <div class="price-card">
+            <h3>Разработка с нуля</h3>
+            <div class="price">5 000 ₽ + 800 ₽/страница</div>
+            <p>Индивидуальный дизайн, верстка, админ-панель</p>
+          </div>
+          <div class="price-card">
+            <h3>Telegram-бот</h3>
+            <div class="price">3 700 — 9 000+ ₽</div>
+            <p>Легкий: 3 700 ₽ / Средний: 6 000 ₽ / Сложный: 9 000+ ₽</p>
+          </div>
+          <div class="price-card">
+            <h3>Техподдержка</h3>
+            <div class="price">1 000 ₽/мес</div>
+            <p>Первый месяц — бесплатно, далее 1 000 ₽/мес</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <h2>Готовы начать?</h2>
+        <p>Оставьте заявку — и мы сделаем крутой продукт для вашего бизнеса</p>
+        <a href="contacts.html" class="btn btn-primary btn-large">Связаться с нами →</a>
       </div>
     </section>
   </main>
@@ -128,10 +129,28 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><h4>Velion Agency</h4><p>Редизайн, боты, поддержка</p></div>
-        <div><h4>Контакты</h4><a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a><a href="mailto:hello@velionagency.ru">hello@velionagency.ru</a><a href="#">Telegram: @velion_agency</a></div>
-        <div><h4>Документы</h4><a href="#">Политика конфиденциальности</a><a href="#">Согласие на обработку ПД</a><a href="#">Договор оферты</a><a href="#">Пользовательское соглашение</a></div>
-        <div><h4>Партнёры</h4><span>Timeweb</span><span>Reg.ru</span><span>Yandex Cloud</span></div>
+        <div>
+          <h4>Velion Agency</h4>
+          <p>Разработка сайтов, редизайн, боты и поддержка</p>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a>
+          <a href="https://t.me/velion_manager" target="_blank">Telegram: @velion_manager</a>
+        </div>
+        <div>
+          <h4>Документы</h4>
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="consent.html">Согласие на обработку ПД</a>
+          <a href="offer.html">Договор оферты</a>
+          <a href="terms.html">Пользовательское соглашение</a>
+        </div>
+        <div>
+          <h4>Партнёры</h4>
+          <span>Timeweb</span>
+          <span>Reg.ru</span>
+          <span>Yandex Cloud</span>
+        </div>
       </div>
       <div class="copyright">© 2025 Velion Agency. Все права защищены.</div>
     </div>

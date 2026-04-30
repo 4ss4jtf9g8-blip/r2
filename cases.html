@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Кейсы — Velion Agency</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
           <a href="prices.html">Цены</a>
           <a href="team.html">Команда</a>
           <a href="contacts.html">Контакты</a>
-          <a href="prices.html" class="btn btn-primary" style="padding: 8px 20px;">Обсудить проект →</a>
+          <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle">☰</button>
       </nav>
@@ -26,87 +26,92 @@
   </header>
 
   <main>
-    <section class="hero" style="padding: 60px 0 40px;">
+    <section class="hero">
       <div class="container">
-        <h1>Наши проекты</h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px;">Реальные кейсы с измеримыми результатами. Никакой воды.</p>
+        <div class="hero-grid">
+          <h1>Наши <strong>проекты</strong></h1>
+          <p class="hero-subtitle">Реальные результаты, которыми мы гордимся</p>
+        </div>
       </div>
     </section>
 
-    <!-- Кейс 1 -->
     <section class="section">
       <div class="container">
-        <div class="card" style="padding: 32px;">
-          <span class="case-meta">Редизайн</span>
-          <h2 style="margin-bottom: 12px;">«МебельМастер» — сайт производителя мебели</h2>
-          <p style="margin-bottom: 24px;"><strong>Задача:</strong> Устаревший сайт с Flash-элементами, каталог недоступен с телефона. Конверсия в заявку — 0.8%.</p>
-          <p style="margin-bottom: 24px;"><strong>Что сделали:</strong> Адаптивный редизайн на Tilda, новая структура каталога, упрощённая форма заявки на замер (3 поля вместо 9), интеграция с CRM.</p>
-          <div style="display: flex; gap: 32px; flex-wrap: wrap; background: var(--surface-light); padding: 20px; border-radius: var(--radius);">
-            <div><strong style="color: var(--accent);">+140%</strong><br>конверсии</div>
-            <div><strong style="color: var(--accent);">0.8% → 1.9%</strong><br>CR</div>
-            <div><strong style="color: var(--accent);">14 → 21</strong><br>заявок в месяц</div>
-            <div><strong style="color: var(--accent);">28 дней</strong><br>срок</div>
+        <div class="cases-grid">
+          <!-- Кейс 1: AMBC -->
+          <div class="case-card">
+            <div class="case-image" style="background: linear-gradient(135deg, #00cc66, #00994d); min-height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+              <span style="font-size: 3rem;">🏥</span>
+            </div>
+            <span class="case-meta">Стоматология</span>
+            <h3>AMBC Михаила Агами</h3>
+            <p>Семейная стоматология — полное обновление сайта и онлайн-запись</p>
+            <div class="result-badge">
+              <div class="result-item"><div class="result-value">+202%</div><div>конверсии</div></div>
+              <div class="result-item"><div class="result-value">×3.1</div><div>записей</div></div>
+              <div class="result-item"><div class="result-value">+47%</div><div>средний чек</div></div>
+            </div>
+            <a href="https://www.ambc.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px;">Посмотреть сайт →</a>
+          </div>
+
+          <!-- Кейс 2: River Park -->
+          <div class="case-card">
+            <div class="case-image" style="background: linear-gradient(135deg, #00cc66, #00994d); min-height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+              <span style="font-size: 3rem;">🏢</span>
+            </div>
+            <span class="case-meta">Недвижимость</span>
+            <h3>River Park Кутузовский</h3>
+            <p>Сайт ЖК премиум-класса — новый дизайн + удобная форма заявки</p>
+            <div class="result-badge">
+              <div class="result-item"><div class="result-value">+240%</div><div>конверсии</div></div>
+              <div class="result-item"><div class="result-value">×3.8</div><div>интереса</div></div>
+              <div class="result-item"><div class="result-value">×3.2</div><div>заявок</div></div>
+            </div>
+            <a href="https://riverpark-kutuzovskiy.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px;">Посмотреть сайт →</a>
+          </div>
+
+          <!-- Кейс 3: Imperium Motors -->
+          <div class="case-card">
+            <div class="case-image" style="background: linear-gradient(135deg, #00cc66, #00994d); min-height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+              <span style="font-size: 3rem;">🚗</span>
+            </div>
+            <span class="case-meta">Автосалон</span>
+            <h3>Imperium Motors</h3>
+            <p>Премиальный автосалон — редизайн и ускорение загрузки</p>
+            <div class="result-badge">
+              <div class="result-item"><div class="result-value">+272%</div><div>конверсии</div></div>
+              <div class="result-item"><div class="result-value">18 дней</div><div>окупаемость</div></div>
+            </div>
+            <a href="https://imperiummotors.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px;">Посмотреть сайт →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Кейс 2 -->
-    <section class="section">
-      <div class="container">
-        <div class="card" style="padding: 32px;">
-          <span class="case-meta">Telegram-бот</span>
-          <h2 style="margin-bottom: 12px;">Стоматология «Формула улыбки» — Telegram-бот</h2>
-          <p style="margin-bottom: 24px;"><strong>Задача:</strong> Администратор тратил 3–4 часа в день на обработку звонков и записей в ручном режиме. Пациенты жаловались на долгое ожидание ответа.</p>
-          <p style="margin-bottom: 24px;"><strong>Что сделали:</strong> Бот для записи на приём — выбор врача, даты и времени в 2 клика, подтверждение через Telegram. Интеграция с Google Таблицами расписания.</p>
-          <div style="display: flex; gap: 32px; flex-wrap: wrap; background: var(--surface-light); padding: 20px; border-radius: var(--radius);">
-            <div><strong style="color: var(--accent);">-40%</strong><br>нагрузки на адм.</div>
-            <div><strong style="color: var(--accent);">17 → 24</strong><br>записи в день</div>
-            <div><strong style="color: var(--accent);">14 дней</strong><br>срок</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <style>
+      .cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 40px;
+      }
+      .case-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        padding: 28px;
+        border: 1px solid var(--border);
+        transition: var(--transition);
+      }
+      .case-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--green);
+      }
+    </style>
 
-    <!-- Кейс 3 -->
-    <section class="section">
-      <div class="container">
-        <div class="card" style="padding: 32px;">
-          <span class="case-meta">Редизайн + лендинг</span>
-          <h2 style="margin-bottom: 12px;">Школа английского SpeakUp — редизайн лендинга</h2>
-          <p style="margin-bottom: 24px;"><strong>Задача:</strong> Лендинг не отражал реальный уровень школы — много текста, плохая мобильная версия, CTA-кнопка спрятана в подвале.</p>
-          <p style="margin-bottom: 24px;"><strong>Что сделали:</strong> Новый лендинг с блоками доверия, отзывами учеников, кнопкой «Записаться на пробный урок» в первом экране, настройка Яндекс.Метрики.</p>
-          <div style="display: flex; gap: 32px; flex-wrap: wrap; background: var(--surface-light); padding: 20px; border-radius: var(--radius);">
-            <div><strong style="color: var(--accent);">+50%</strong><br>заявок с рекламы</div>
-            <div><strong style="color: var(--accent);">72% → 48%</strong><br>отказы</div>
-            <div><strong style="color: var(--accent);">10 дней</strong><br>срок</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Кейс 4 (дополнительный) -->
-    <section class="section">
-      <div class="container">
-        <div class="card" style="padding: 32px;">
-          <span class="case-meta">Техподдержка + оптимизация</span>
-          <h2 style="margin-bottom: 12px;">Сеть кальянных «Дымный вечер»</h2>
-          <p style="margin-bottom: 24px;"><strong>Задача:</strong> Сайт постоянно падал в часы пик, скорость загрузки — 8 секунд. Потеря клиентов из-за нестабильности.</p>
-          <p style="margin-bottom: 24px;"><strong>Что сделали:</strong> Перенесли на более мощный хостинг, настроили кэширование, оптимизировали изображения, подключили мониторинг 24/7.</p>
-          <div style="display: flex; gap: 32px; flex-wrap: wrap; background: var(--surface-light); padding: 20px; border-radius: var(--radius);">
-            <div><strong style="color: var(--accent);">8с → 1.8с</strong><br>скорость</div>
-            <div><strong style="color: var(--accent);">99.9%</strong><br>аптайм</div>
-            <div><strong style="color: var(--accent);">5 дней</strong><br>срок</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="text-align: center;">
+    <section class="section cta-section">
       <div class="container">
         <h2>Хотите такой же результат?</h2>
-        <p style="margin-bottom: 24px;">Расскажите о своём проекте — и мы предложим решение.</p>
-        <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
+        <p>Расскажите о своём проекте — мы предложим решение</p>
+        <a href="prices.html" class="btn btn-primary btn-large">Обсудить проект →</a>
       </div>
     </section>
   </main>
@@ -114,10 +119,28 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><h4>Velion Agency</h4><p>Редизайн, боты, поддержка</p></div>
-        <div><h4>Контакты</h4><a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a><a href="mailto:hello@velionagency.ru">hello@velionagency.ru</a><a href="#">Telegram: @velion_agency</a></div>
-        <div><h4>Документы</h4><a href="#">Политика конфиденциальности</a><a href="#">Согласие на обработку ПД</a><a href="#">Договор оферты</a><a href="#">Пользовательское соглашение</a></div>
-        <div><h4>Партнёры</h4><span>Timeweb</span><span>Reg.ru</span><span>Yandex Cloud</span></div>
+        <div>
+          <h4>Velion Agency</h4>
+          <p>Разработка сайтов, редизайн, боты и поддержка</p>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a>
+          <a href="https://t.me/velion_manager" target="_blank">Telegram: @velion_manager</a>
+        </div>
+        <div>
+          <h4>Документы</h4>
+          <a href="privacy.html">Политика конфиденциальности</a>
+          <a href="consent.html">Согласие на обработку ПД</a>
+          <a href="offer.html">Договор оферты</a>
+          <a href="terms.html">Пользовательское соглашение</a>
+        </div>
+        <div>
+          <h4>Партнёры</h4>
+          <span>Timeweb</span>
+          <span>Reg.ru</span>
+          <span>Yandex Cloud</span>
+        </div>
       </div>
       <div class="copyright">© 2025 Velion Agency. Все права защищены.</div>
     </div>
