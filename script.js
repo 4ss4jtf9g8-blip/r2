@@ -8,14 +8,13 @@ if (toggle) {
   });
 }
 
-// закрываем меню при клике на ссылку
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     if (navLinks) navLinks.classList.remove('open');
   });
 });
 
-// калькулятор цен
+// калькулятор
 const serviceSelect = document.getElementById('serviceType');
 const pagesInput = document.getElementById('pages');
 const adminCheck = document.getElementById('needsAdmin');
@@ -56,13 +55,11 @@ if (serviceSelect) {
   updatePrice();
 }
 
-// отправка формы (простое демо)
+// формы
 document.querySelectorAll('form').forEach(form => {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-    alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
+    alert('Спасибо! Мы свяжемся с вами.');
     form.reset();
   });
 });
-
-console.log('Velion Agency — сайт работает!');
