@@ -6,6 +6,43 @@
   <title>Кейсы — Velion Agency</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Дополнительные стили для изображений кейсов */
+    .case-image {
+      width: 100%;
+      height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      background-color: var(--surface);
+    }
+    .case-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .case-card:hover .case-image img {
+      transform: scale(1.03);
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 40px;
+    }
+    .case-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .case-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -40,8 +77,8 @@
         <div class="cases-grid">
           <!-- Кейс 1: AMBC -->
           <div class="case-card">
-            <div class="case-image" style="background: linear-gradient(135deg, #00cc66, #00994d); min-height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <span style="font-size: 3rem;">🏥</span>
+            <div class="case-image">
+              <img src="https://i.postimg.cc/bZLRjcfw/568494dc.jpg" alt="AMBC стоматология проект">
             </div>
             <span class="case-meta">Стоматология</span>
             <h3>AMBC Михаила Агами</h3>
@@ -51,13 +88,13 @@
               <div class="result-item"><div class="result-value">×3.1</div><div>записей</div></div>
               <div class="result-item"><div class="result-value">+47%</div><div>средний чек</div></div>
             </div>
-            <a href="https://www.ambc.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px;">Посмотреть сайт →</a>
+            <a href="https://www.ambc.ru/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 16px; width: 100%; text-align: center; justify-content: center;">Посмотреть сайт →</a>
           </div>
 
           <!-- Кейс 2: River Park -->
           <div class="case-card">
-            <div class="case-image" style="background: linear-gradient(135deg, #00cc66, #00994d); min-height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <span style="font-size: 3rem;">🏢</span>
+            <div class="case-image">
+              <img src="https://i.postimg.cc/gL9VKG8N/06f5c6d6.jpg" alt="River Park Кутузовский проект">
             </div>
             <span class="case-meta">Недвижимость</span>
             <h3>River Park Кутузовский</h3>
@@ -67,13 +104,13 @@
               <div class="result-item"><div class="result-value">×3.8</div><div>интереса</div></div>
               <div class="result-item"><div class="result-value">×3.2</div><div>заявок</div></div>
             </div>
-            <a href="https://riverpark-kutuzovskiy.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px;">Посмотреть сайт →</a>
+            <a href="https://riverpark-kutuzovskiy.ru/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 16px; width: 100%; text-align: center; justify-content: center;">Посмотреть сайт →</a>
           </div>
 
           <!-- Кейс 3: Imperium Motors -->
           <div class="case-card">
-            <div class="case-image" style="background: linear-gradient(135deg, #00cc66, #00994d); min-height: 200px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
-              <span style="font-size: 3rem;">🚗</span>
+            <div class="case-image">
+              <img src="https://i.postimg.cc/vgx794gm/8fa7fe1f.jpg" alt="Imperium Motors автосалон проект">
             </div>
             <span class="case-meta">Автосалон</span>
             <h3>Imperium Motors</h3>
@@ -82,30 +119,11 @@
               <div class="result-item"><div class="result-value">+272%</div><div>конверсии</div></div>
               <div class="result-item"><div class="result-value">18 дней</div><div>окупаемость</div></div>
             </div>
-            <a href="https://imperiummotors.ru/" target="_blank" class="btn btn-outline" style="margin-top: 16px;">Посмотреть сайт →</a>
+            <a href="https://imperiummotors.ru/" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="margin-top: 16px; width: 100%; text-align: center; justify-content: center;">Посмотреть сайт →</a>
           </div>
         </div>
       </div>
     </section>
-
-    <style>
-      .cases-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 40px;
-      }
-      .case-card {
-        background: var(--surface);
-        border-radius: var(--radius);
-        padding: 28px;
-        border: 1px solid var(--border);
-        transition: var(--transition);
-      }
-      .case-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--green);
-      }
-    </style>
 
     <section class="section cta-section">
       <div class="container">
@@ -126,7 +144,7 @@
         <div>
           <h4>Контакты</h4>
           <a href="mailto:velion.agency@gmail.com">velion.agency@gmail.com</a>
-          <a href="https://t.me/velion_manager" target="_blank">Telegram: @velion_manager</a>
+          <a href="https://t.me/velion_manager" target="_blank" rel="noopener noreferrer">Telegram: @velion_manager</a>
         </div>
         <div>
           <h4>Документы</h4>
