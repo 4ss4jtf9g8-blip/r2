@@ -88,7 +88,7 @@ document.querySelectorAll('form').forEach(form => {
   });
 });
 
-// анимация при скролле
+// анимация
 const fadeElements = document.querySelectorAll('.card, .team-card, .price-card, .stat, .case-card, .calculator, .cta-section');
 
 fadeElements.forEach(el => {
