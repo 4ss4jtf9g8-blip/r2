@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Услуги — Velion Agency</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
           <a href="prices.html">Цены</a>
           <a href="team.html">Команда</a>
           <a href="contacts.html">Контакты</a>
-          <a href="prices.html" class="btn btn-primary" style="padding: 8px 20px;">Обсудить проект →</a>
+          <a href="prices.html" class="btn btn-primary">Обсудить проект →</a>
         </div>
         <button class="mobile-toggle" id="mobileToggle">☰</button>
       </nav>
@@ -26,10 +26,59 @@
   </header>
 
   <main>
-    <section class="hero" style="padding: 60px 0 40px;">
+    <section class="hero">
       <div class="container">
-        <h1>Что мы делаем</h1>
-        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px;">Помогаем бизнесу расти через качественный веб-продукт. Без шаблонов — под вашу аудиторию и задачи.</p>
+        <div class="hero-grid">
+          <h1>Что мы делаем</h1>
+          <p class="hero-subtitle">Сайты под ключ, редизайн, боты и поддержка — всё для вашего бизнеса в одном месте.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Разработка с нуля (НОВАЯ УСЛУГА) -->
+    <section class="section">
+      <div class="container">
+        <h2>Разработка сайтов с нуля</h2>
+        <div class="cards-grid">
+          <div class="card card-featured">
+            <div class="card-badge">🔥 Хит</div>
+            <h3>Сайт под ключ</h3>
+            <p>Полный цикл разработки: от прототипа до запуска. Индивидуальный дизайн, адаптив, админ-панель, SEO-база.</p>
+            <ul class="features-list">
+              <li>✓ Индивидуальный дизайн в Figma</li>
+              <li>✓ Адаптивная вёрстка</li>
+              <li>✓ Удобная админ-панель</li>
+              <li>✓ Базовая SEO-оптимизация</li>
+              <li>✓ Обучение работе с сайтом</li>
+            </ul>
+            <p class="price">от 90 000 ₽</p>
+            <a href="prices.html#calculator" class="btn btn-outline">Рассчитать проект →</a>
+          </div>
+          <div class="card">
+            <h3>Лендинг (Landing Page)</h3>
+            <p>Одностраничный сайт для запуска рекламы. Быстро, эффективно, с фокусом на конверсию.</p>
+            <ul class="features-list">
+              <li>✓ Продающая структура</li>
+              <li>✓ Адаптивная вёрстка</li>
+              <li>✓ Настройка форм и аналитики</li>
+              <li>✓ Срок — от 7 дней</li>
+            </ul>
+            <p class="price">от 45 000 ₽</p>
+            <a href="prices.html" class="btn btn-outline">Узнать подробнее →</a>
+          </div>
+          <div class="card">
+            <h3>Интернет-магазин</h3>
+            <p>Полноценный каталог с корзиной, оплатой и интеграцией с доставкой.</p>
+            <ul class="features-list">
+              <li>✓ Каталог с фильтрами</li>
+              <li>✓ Корзина и оформление заказа</li>
+              <li>✓ Интеграция с оплатой</li>
+              <li>✓ Админ-панель для товаров</li>
+            </ul>
+            <p class="price">от 150 000 ₽</p>
+            <a href="prices.html" class="btn btn-outline">Узнать подробнее →</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -40,18 +89,21 @@
         <div class="cards-grid">
           <div class="card">
             <h3>Базовый редизайн</h3>
-            <p>До 5 страниц, адаптивная вёрстка на Tilda/конструкторе, базовая SEO-оптимизация. Срок — до 14 дней.</p>
-            <p style="font-weight: 700; margin-top: 16px;">от 35 000 ₽</p>
+            <p>До 5 страниц, адаптивная вёрстка, конструктор (Tilda/Webflow), базовая SEO-разметка.</p>
+            <p class="price">от 35 000 ₽</p>
+            <p class="term">Срок: 14 дней</p>
           </div>
           <div class="card">
             <h3>Оптимальный редизайн</h3>
-            <p>До 10 страниц, кастомный дизайн в Figma, интеграция с CRM, настройка аналитики. Срок — 25–30 дней.</p>
-            <p style="font-weight: 700; margin-top: 16px;">от 70 000 ₽</p>
+            <p>До 10 страниц, кастомный дизайн, CRM-интеграция, аналитика.</p>
+            <p class="price">от 70 000 ₽</p>
+            <p class="term">Срок: 25–30 дней</p>
           </div>
           <div class="card">
             <h3>VIP редизайн</h3>
-            <p>Без лимита страниц, UX-аудит, анимации, поддержка 3 месяца после запуска. Приоритетная очередь.</p>
-            <p style="font-weight: 700; margin-top: 16px;">от 130 000 ₽</p>
+            <p>Без лимита страниц, UX-аудит, анимации, поддержка 3 месяца.</p>
+            <p class="price">от 130 000 ₽</p>
+            <p class="term">Приоритетная очередь</p>
           </div>
         </div>
       </div>
@@ -64,13 +116,13 @@
         <div class="cards-grid">
           <div class="card">
             <h3>Стартовый бот</h3>
-            <p>Запись клиентов, FAQ, меню-конструктор. Интеграция с Google Таблицами. До 5 сценариев.</p>
-            <p style="font-weight: 700; margin-top: 16px;">от 25 000 ₽</p>
+            <p>Запись, FAQ, меню. Интеграция с Google Таблицами. До 5 сценариев.</p>
+            <p class="price">от 25 000 ₽</p>
           </div>
           <div class="card">
             <h3>Бизнес-бот</h3>
-            <p>CRM + API, платёжная система (ЮKassa / Stripe), уведомления, аналитика. Неограниченные сценарии.</p>
-            <p style="font-weight: 700; margin-top: 16px;">от 40 000 ₽</p>
+            <p>CRM + API, платежи, уведомления, аналитика. Неограниченные сценарии.</p>
+            <p class="price">от 40 000 ₽</p>
           </div>
         </div>
       </div>
@@ -79,27 +131,27 @@
     <!-- Техподдержка -->
     <section class="section">
       <div class="container">
-        <h2>Техническая поддержка</h2>
+        <h2>Техподдержка и сопровождение</h2>
         <div class="cards-grid">
           <div class="card">
             <h3>Абонемент «Старт»</h3>
-            <p>8 часов работ в месяц, правки контента, мониторинг доступности. Ответ в течение 4 часов.</p>
-            <p style="font-weight: 700; margin-top: 16px;">8 000 ₽/мес</p>
+            <p>8 часов/мес, правки контента, мониторинг. Ответ за 4 часа.</p>
+            <p class="price">8 000 ₽/мес</p>
           </div>
           <div class="card">
             <h3>Абонемент «Бизнес»</h3>
-            <p>20 часов работ в месяц, правки + доработки, еженедельный отчёт, приоритетная поддержка.</p>
-            <p style="font-weight: 700; margin-top: 16px;">18 000 ₽/мес</p>
+            <p>20 часов/мес, правки + доработки, отчёты, приоритет.</p>
+            <p class="price">18 000 ₽/мес</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="text-align: center;">
+    <section class="section cta-section">
       <div class="container">
-        <h2>Не нашли то, что искали?</h2>
-        <p style="margin-bottom: 24px;">Закажите индивидуальную разработку — мы предложим решение под вашу нишу.</p>
-        <a href="prices.html" class="btn btn-primary">Рассчитать проект →</a>
+        <h2>Готовы начать проект?</h2>
+        <p>Оставьте заявку — обсудим вашу задачу и предложим лучшее решение.</p>
+        <a href="prices.html" class="btn btn-primary btn-large">Обсудить проект →</a>
       </div>
     </section>
   </main>
@@ -107,10 +159,29 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div><h4>Velion Agency</h4><p>Редизайн, боты, поддержка</p></div>
-        <div><h4>Контакты</h4><a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a><a href="mailto:hello@velionagency.ru">hello@velionagency.ru</a><a href="#">Telegram: @velion_agency</a></div>
-        <div><h4>Документы</h4><a href="#">Политика конфиденциальности</a><a href="#">Согласие на обработку ПД</a><a href="#">Договор оферты</a><a href="#">Пользовательское соглашение</a></div>
-        <div><h4>Партнёры</h4><span>Timeweb</span><span>Reg.ru</span><span>Yandex Cloud</span></div>
+        <div>
+          <h4>Velion Agency</h4>
+          <p>Разработка сайтов, редизайн, боты и поддержка</p>
+        </div>
+        <div>
+          <h4>Контакты</h4>
+          <a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a>
+          <a href="mailto:hello@velionagency.ru">hello@velionagency.ru</a>
+          <a href="#">Telegram: @velion_agency</a>
+        </div>
+        <div>
+          <h4>Документы</h4>
+          <a href="#">Политика конфиденциальности</a>
+          <a href="#">Согласие на обработку ПД</a>
+          <a href="#">Договор оферты</a>
+          <a href="#">Пользовательское соглашение</a>
+        </div>
+        <div>
+          <h4>Партнёры</h4>
+          <span>Timeweb</span>
+          <span>Reg.ru</span>
+          <span>Yandex Cloud</span>
+        </div>
       </div>
       <div class="copyright">© 2025 Velion Agency. Все права защищены.</div>
     </div>
