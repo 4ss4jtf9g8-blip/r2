@@ -40,6 +40,10 @@ function updatePrice() {
     if (crmCheck?.checked) base += 8000;
   } else if (service === 'support') {
     base = 8000;
+  } else if (service === 'from-scratch') {
+    base = 90000;
+    if (pages > 5) base += (pages - 5) * 5000;
+    if (adminCheck?.checked) base += 15000;
   }
 
   if (priceSpan) {
