@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Цены и калькулятор — Velion Agency</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">VELION<span>.</span></a>
+        <div class="nav-links" id="navLinks">
+          <a href="services.html">Услуги</a>
+          <a href="cases.html">Кейсы</a>
+          <a href="prices.html">Цены</a>
+          <a href="team.html">Команда</a>
+          <a href="contacts.html">Контакты</a>
+          <a href="prices.html" class="btn btn-primary" style="padding: 8px 20px;">Обсудить проект →</a>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding: 60px 0 40px;">
+      <div class="container">
+        <h1>Сколько стоит проект?</h1>
+        <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px;">Прозрачные цены. Калькулятор даст примерную стоимость за 30 секунд.</p>
+      </div>
+    </section>
+
+    <!-- Пакетные цены -->
+    <section class="section">
+      <div class="container">
+        <h2>Готовые пакеты</h2>
+        <div class="cards-grid">
+          <div class="price-card">
+            <h3>Редизайн — Базовый</h3>
+            <div class="price">35 000 ₽</div>
+            <ul style="margin: 16px 0; padding-left: 20px; color: var(--text-secondary);">
+              <li>До 5 страниц</li>
+              <li>Адаптивная вёрстка</li>
+              <li>Tilda / конструктор</li>
+              <li>Базовая SEO-разметка</li>
+              <li>Срок: 14 дней</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Редизайн — Оптимальный</h3>
+            <div class="price">70 000 ₽</div>
+            <ul style="margin: 16px 0; padding-left: 20px; color: var(--text-secondary);">
+              <li>До 10 страниц</li>
+              <li>Кастомный дизайн в Figma</li>
+              <li>CRM-интеграция</li>
+              <li>Настройка аналитики</li>
+              <li>Срок: 25–30 дней</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Редизайн — VIP</h3>
+            <div class="price">130 000 ₽</div>
+            <ul style="margin: 16px 0; padding-left: 20px; color: var(--text-secondary);">
+              <li>Без лимита страниц</li>
+              <li>UX-аудит</li>
+              <li>Анимации</li>
+              <li>Поддержка 3 месяца</li>
+              <li>Приоритетная очередь</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Калькулятор цен (интерактивный) -->
+    <section class="section">
+      <div class="container">
+        <h2>Калькулятор стоимости</h2>
+        <p style="margin-bottom: 24px;">Выберите параметры — получите примерную цену.</p>
+        
+        <div class="calculator">
+          <div class="calc-field">
+            <label>Тип услуги</label>
+            <select id="serviceType">
+              <option value="redesign">Редизайн сайта</option>
+              <option value="landing">Лендинг (одностраничный)</option>
+              <option value="bot">Telegram-бот</option>
+              <option value="support">Техподдержка (абонемент)</option>
+            </select>
+          </div>
+
+          <div class="calc-field" id="pagesField">
+            <label>Количество страниц</label>
+            <input type="number" id="pages" value="5" min="1" max="50">
+          </div>
+
+          <div class="calc-field">
+            <div class="checkbox-group">
+              <label><input type="checkbox" id="needsAdmin"> Нужна админ-панель (+8 000 ₽ для редизайна, +10 000 ₽ для бота)</label>
+              <label><input type="checkbox" id="needsCrm"> Интеграция с CRM (+12 000 ₽)</label>
+            </div>
+          </div>
+
+          <div class="price-result">
+            <div style="margin-bottom: 8px;">ОРИЕНТИРОВОЧНАЯ СТОИМОСТЬ</div>
+            <div class="total" id="calculatedPrice">35 000</div>
+            <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 8px;">₽</div>
+            <div style="font-size: 0.75rem; margin-top: 8px;">* Точная цена — после бесплатной консультации</div>
+          </div>
+
+          <a href="contacts.html" class="btn btn-primary" style="width: 100%; text-align: center; justify-content: center;">Отправить заявку на точный расчёт →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="text-align: center;">
+      <div class="container">
+        <h2>Остались вопросы?</h2>
+        <p style="margin-bottom: 24px;">Свяжитесь с нами — мы подготовим индивидуальное предложение под ваш бюджет.</p>
+        <a href="contacts.html" class="btn btn-outline">Написать нам</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>Velion Agency</h4><p>Редизайн, боты, поддержка</p></div>
+        <div><h4>Контакты</h4><a href="tel:+7XXX">+7 (XXX) XXX-XX-XX</a><a href="mailto:hello@velionagency.ru">hello@velionagency.ru</a><a href="#">Telegram: @velion_agency</a></div>
+        <div><h4>Документы</h4><a href="#">Политика конфиденциальности</a><a href="#">Согласие на обработку ПД</a><a href="#">Договор оферты</a><a href="#">Пользовательское соглашение</a></div>
+        <div><h4>Партнёры</h4><span>Timeweb</span><span>Reg.ru</span><span>Yandex Cloud</span></div>
+      </div>
+      <div class="copyright">© 2025 Velion Agency. Все права защищены.</div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
