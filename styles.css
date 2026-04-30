@@ -263,3 +263,13 @@ input:focus, textarea:focus {
     display: none;
   }
 }
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.6s;
+}
