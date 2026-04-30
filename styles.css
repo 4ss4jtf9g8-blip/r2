@@ -5,22 +5,22 @@
 }
 
 :root {
-  --bg: #f5f5f7;
-  --bg-light: #ffffff;
-  --surface: #ffffff;
-  --surface-light: #f8f8fa;
-  --surface-hover: #f0f0f2;
-  --border: #e0e0e4;
-  --border-dark: #ccccd0;
-  --text: #1a1a1a;
-  --text-secondary: #555555;
-  --text-light: #888888;
+  --bg: #121212;
+  --bg-secondary: #1a1a1a;
+  --surface: #1e1e1e;
+  --surface-light: #252525;
+  --surface-hover: #2a2a2a;
+  --border: #2e2e2e;
+  --border-light: #3a3a3a;
+  --text: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #707070;
   --green: #00cc66;
   --green-dark: #00994d;
-  --green-light: #e6f9f0;
-  --green-glow: rgba(0, 204, 102, 0.15);
-  --shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --green-light: rgba(0, 204, 102, 0.12);
+  --green-glow: rgba(0, 204, 102, 0.2);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.4);
   --radius: 12px;
   --radius-sm: 6px;
   --transition: all 0.2s ease;
@@ -39,7 +39,7 @@ body {
   padding: 0 24px;
 }
 
-/* типографика — резкая, четкая */
+/* типографика */
 h1, h2, h3 {
   font-weight: 700;
   line-height: 1.2;
@@ -75,7 +75,7 @@ h3 {
   border-bottom: 1px solid var(--border);
 }
 
-/* кнопки — резкие, дерзкие */
+/* кнопки */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -93,14 +93,14 @@ h3 {
 
 .btn-primary {
   background: var(--green);
-  color: white;
-  box-shadow: var(--shadow);
+  color: #000000;
+  font-weight: 700;
 }
 
 .btn-primary:hover {
   background: var(--green-dark);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 0 15px var(--green-glow);
 }
 
 .btn-outline {
@@ -118,7 +118,7 @@ h3 {
 .header {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(18, 18, 18, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
@@ -176,7 +176,7 @@ h3 {
 /* hero */
 .hero {
   padding: 100px 0 80px;
-  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  background: linear-gradient(135deg, #121212 0%, #1a2a1f 100%);
 }
 
 .hero-grid {
@@ -206,15 +206,14 @@ h3 {
   padding: 16px 24px;
   background: var(--surface);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: var(--transition);
   border: 1px solid var(--border);
+  transition: var(--transition);
 }
 
 .stat:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
   border-color: var(--green);
+  box-shadow: 0 0 20px var(--green-glow);
 }
 
 .stat h3 {
@@ -243,24 +242,23 @@ h3 {
   border-radius: var(--radius);
   padding: 28px;
   transition: var(--transition);
-  box-shadow: var(--shadow);
 }
 
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--green);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 0 25px var(--green-glow);
 }
 
 .card-featured {
   border-top: 3px solid var(--green);
-  background: linear-gradient(135deg, #ffffff, var(--green-light));
+  background: linear-gradient(135deg, var(--surface), #1a2a1f);
 }
 
 .card-badge {
   display: inline-block;
   background: var(--green);
-  color: white;
+  color: #000000;
   padding: 4px 12px;
   font-size: 0.7rem;
   font-weight: 700;
@@ -276,7 +274,7 @@ h3 {
   background: var(--green-light);
   border-radius: 20px;
   font-size: 0.7rem;
-  color: var(--green-dark);
+  color: var(--green);
   margin-bottom: 16px;
   font-weight: 600;
 }
@@ -285,7 +283,7 @@ h3 {
   font-size: 1.8rem;
   font-weight: 700;
   margin: 16px 0 8px;
-  color: var(--green-dark);
+  color: var(--green);
 }
 
 .term {
@@ -314,7 +312,7 @@ h3 {
 
 /* результат кейсов */
 .result-badge {
-  background: var(--surface-light);
+  background: var(--bg-secondary);
   border-radius: var(--radius-sm);
   padding: 16px;
   margin-top: 20px;
@@ -333,7 +331,7 @@ h3 {
 .result-value {
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--green-dark);
+  color: var(--green);
 }
 
 /* калькулятор */
@@ -342,7 +340,6 @@ h3 {
   border-radius: var(--radius);
   padding: 32px;
   margin-top: 32px;
-  box-shadow: var(--shadow);
   border: 1px solid var(--border);
 }
 
@@ -361,7 +358,7 @@ h3 {
 select, input[type="number"], input[type="text"], textarea {
   width: 100%;
   padding: 12px;
-  background: var(--bg);
+  background: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -372,7 +369,7 @@ select, input[type="number"], input[type="text"], textarea {
 select:focus, input:focus, textarea:focus {
   outline: none;
   border-color: var(--green);
-  box-shadow: 0 0 0 3px var(--green-glow);
+  box-shadow: 0 0 0 3px var(--green-light);
 }
 
 .checkbox-group {
@@ -387,6 +384,7 @@ select:focus, input:focus, textarea:focus {
   align-items: center;
   gap: 8px;
   font-weight: normal;
+  cursor: pointer;
 }
 
 .price-result {
@@ -395,12 +393,13 @@ select:focus, input:focus, textarea:focus {
   border-radius: var(--radius);
   text-align: center;
   margin: 24px 0;
+  border: 1px solid rgba(0, 204, 102, 0.2);
 }
 
 .price-result .total {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--green-dark);
+  color: var(--green);
 }
 
 /* команда */
@@ -417,19 +416,18 @@ select:focus, input:focus, textarea:focus {
   text-align: center;
   border: 1px solid var(--border);
   transition: var(--transition);
-  box-shadow: var(--shadow);
 }
 
 .team-card:hover {
   transform: translateY(-4px);
   border-color: var(--green);
-  box-shadow: var(--shadow-hover);
+  box-shadow: 0 0 25px var(--green-glow);
 }
 
 .team-avatar {
   width: 100px;
   height: 100px;
-  background: linear-gradient(135deg, var(--green-light), var(--green));
+  background: linear-gradient(135deg, var(--green-dark), var(--green));
   border-radius: 50%;
   margin: 0 auto 16px;
   display: flex;
@@ -437,7 +435,7 @@ select:focus, input:focus, textarea:focus {
   justify-content: center;
   font-size: 2rem;
   font-weight: 700;
-  color: white;
+  color: #000000;
 }
 
 /* контакты */
@@ -452,7 +450,7 @@ select:focus, input:focus, textarea:focus {
 }
 
 .contact-info a {
-  color: var(--green-dark);
+  color: var(--green);
   text-decoration: none;
 }
 
@@ -462,7 +460,7 @@ select:focus, input:focus, textarea:focus {
 
 /* карта-заглушка */
 .map-placeholder {
-  background: var(--surface-light);
+  background: var(--surface);
   height: 300px;
   border-radius: var(--radius);
   display: flex;
@@ -473,7 +471,7 @@ select:focus, input:focus, textarea:focus {
 
 /* футер */
 .footer {
-  background: var(--surface);
+  background: var(--bg-secondary);
   border-top: 1px solid var(--border);
   padding: 48px 0 32px;
 }
@@ -510,17 +508,18 @@ select:focus, input:focus, textarea:focus {
   text-align: center;
   padding-top: 32px;
   border-top: 1px solid var(--border);
-  color: var(--text-light);
+  color: var(--text-muted);
   font-size: 0.8rem;
 }
 
 /* cta секция */
 .cta-section {
   text-align: center;
-  background: linear-gradient(135deg, var(--green-light), #ffffff);
+  background: linear-gradient(135deg, var(--bg-secondary), #1a2a1f);
   border-radius: var(--radius);
   margin: 40px 0;
   padding: 60px 20px;
+  border: 1px solid var(--border);
 }
 
 .cta-section p {
@@ -546,7 +545,6 @@ select:focus, input:focus, textarea:focus {
     padding: 24px;
     gap: 20px;
     border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow);
   }
   .nav-links.open {
     display: flex;
@@ -581,7 +579,7 @@ select:focus, input:focus, textarea:focus {
 /* дополнительные эффекты */
 ::selection {
   background: var(--green);
-  color: white;
+  color: #000000;
 }
 
 hr {
@@ -603,4 +601,8 @@ hr {
 ::-webkit-scrollbar-thumb {
   background: var(--green);
   border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green-dark);
 }
